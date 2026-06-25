@@ -39,7 +39,9 @@ export default function Home() {
         <Projects />
       </section>
       <Pricing />
-      <Testimonials />
+      <section id="testimonials">
+        <Testimonials />
+      </section>
       <Insights />
       <section id="team">
         <Team />
