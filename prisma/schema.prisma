@@ -1,0 +1,61 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Enquiry {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  firstName   String
+  lastName    String
+  email       String
+  phone       String?
+  company     String?
+  service     String
+  budget      String?
+  timeline    String?
+  companySize String?
+  description String
+  newsletter   Boolean  @default(false)
+  attachments  Json?
+  status       String   @default("new")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("enquiries")
+}
+
+model AdminAllowlist {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  email     String    @unique
+  label     String?
+  status    String    @default("active") // active | suspended | temporary
+  expiresAt DateTime?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  @@map("admin_allowlist")
+}
+
+model AccessDeniedLog {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  email     String
+  reason    String
+  attemptAt DateTime @default(now())
+
+  @@map("access_denied_log")
+}
+
+model PageView {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  page      String
+  referrer  String?
+  userAgent String?
+  createdAt DateTime @default(now())
+
+  @@map("page_views")
+}

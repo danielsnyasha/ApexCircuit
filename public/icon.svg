@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Background: rounded square with dark gradient -->
+  <rect width="32" height="32" rx="8" fill="url(#bg)"/>
+
+  <!-- Circuit trace lines -->
+  <line x1="6" y1="26" x2="6" y2="22" stroke="#8B0000" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+  <line x1="6" y1="22" x2="9" y2="22" stroke="#8B0000" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+  <line x1="26" y1="26" x2="26" y2="22" stroke="#DC2626" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+  <line x1="26" y1="22" x2="23" y2="22" stroke="#DC2626" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+  <line x1="6" y1="10" x2="6" y2="6" stroke="#DC2626" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+  <line x1="6" y1="6" x2="9" y2="6" stroke="#DC2626" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+  <line x1="26" y1="10" x2="26" y2="6" stroke="#8B0000" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+  <line x1="26" y1="6" x2="23" y2="6" stroke="#8B0000" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Corner dots -->
+  <circle cx="6" cy="26" r="1" fill="#DC2626" opacity="0.7"/>
+  <circle cx="26" cy="26" r="1" fill="#DC2626" opacity="0.7"/>
+  <circle cx="6" cy="6" r="1" fill="#DC2626" opacity="0.7"/>
+  <circle cx="26" cy="6" r="1" fill="#DC2626" opacity="0.7"/>
+
+  <!-- Bold "A" letterform -->
+  <path d="M16 7 L9 25 H12.5 L14.2 20.5 H17.8 L19.5 25 H23 L16 7Z" fill="url(#agrad)"/>
+  <path d="M15 17.5 L16 14 L17 17.5 H15Z" fill="#0D0D14"/>
+
+  <!-- Crossbar dot accent -->
+  <circle cx="16" cy="17" r="1.2" fill="#DC2626" opacity="0.9"/>
+
+  <!-- Zap bolt overlay (small, top-right of letter) -->
+  <path d="M18.5 9.5 L17 13 H18.8 L17.5 16.5 L21 11.5 H19.2 L20.5 9.5Z" fill="#FF4444" opacity="0.5"/>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1A0505"/>
+      <stop offset="100%" stop-color="#0D0D14"/>
+    </linearGradient>
+    <linearGradient id="agrad" x1="9" y1="7" x2="23" y2="25" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FF4444"/>
+      <stop offset="100%" stop-color="#8B0000"/>
+    </linearGradient>
+  </defs>
+</svg>
