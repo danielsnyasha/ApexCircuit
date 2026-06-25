@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { Quote, ChevronLeft, ChevronRight, Star, Building2, HeartPulse, Landmark, ShoppingCart, Truck, Home, Factory, Zap, GraduationCap, Leaf, Pickaxe, Globe } from "lucide-react";
 
 const sectors = [
@@ -22,63 +23,69 @@ const sectors = [
 const testimonials = [
   {
     quote:
-      "Apex Circuit delivered our digital tipping platform end-to-end in 14 weeks. The team's technical depth is exceptional — they handled a complex multi-portal architecture and third-party payment integration without a single missed milestone. Post-launch support has been outstanding.",
-    name: "Tendai Moyo",
+      "Apex Circuit delivered our digital tipping platform end-to-end in 14 weeks. The team's technical depth is exceptional. They handled a complex multi-portal architecture and third-party payment integration without a single missed milestone. Post-launch support has been outstanding.",
+    name: "Isaac Noah",
     role: "Chief Technology Officer",
+    company: "PaySwift Africa",
     sector: "FinTech",
-    stars: 5,
-    initial: "TM",
+    photo: "https://i.pravatar.cc/150?img=59",
     gradient: "from-[#1E3A8A] to-[#2563EB]",
+    accent: "#2563EB",
   },
   {
     quote:
-      "We had a 15-year-old ERP running on a system three vendors had given up on. Apex Circuit not only understood our requirements in the first session — they delivered a fully customised ERPNext implementation with custom doctypes, automated bank reconciliation, and a management dashboard within 3 months. Remarkable.",
+      "We had a 15-year-old ERP running on a system three vendors had given up on. Apex Circuit understood our requirements in the first session and delivered a fully customised ERPNext implementation with custom doctypes, automated bank reconciliation, and a management dashboard within 3 months. Remarkable.",
     name: "David Osei-Bonsu",
     role: "Head of Operations",
+    company: "Osei Industrial Group",
     sector: "Manufacturing",
-    stars: 5,
-    initial: "DO",
+    photo: "https://randomuser.me/api/portraits/men/55.jpg",
     gradient: "from-[#7C3AED] to-[#A78BFA]",
+    accent: "#7C3AED",
   },
   {
     quote:
       "The GIS platform Apex Circuit built for our land management division handles thousands of spatial records across three provinces. The Mapbox integration, PostGIS queries, and the QGIS workflow they designed are production-grade and our team adopted it within days of go-live.",
     name: "Grace Chikwanda",
     role: "Digital Transformation Lead",
+    company: "Ministry of Lands",
     sector: "Government",
-    stars: 5,
-    initial: "GC",
+    photo: "https://randomuser.me/api/portraits/women/62.jpg",
     gradient: "from-[#059669] to-[#10B981]",
+    accent: "#059669",
   },
   {
     quote:
       "Our React Native field force app now handles 500+ field agents across five regions. Apex Circuit designed the offline-first architecture, biometric auth, and the sync engine. The 82%+ test coverage they delivered gave our QA team confidence we had never had on a mobile project before.",
     name: "Amara Diallo",
     role: "VP Engineering",
+    company: "FieldForce Solutions",
     sector: "Enterprise",
-    stars: 5,
-    initial: "AD",
+    photo: "https://randomuser.me/api/portraits/women/89.jpg",
     gradient: "from-[#8B0000] to-[#DC2626]",
+    accent: "#DC2626",
   },
   {
     quote:
-      "We needed an AI quoting engine that could cut material waste and speed up our sales cycle. Apex Circuit built exactly that — an ML nesting algorithm integrated into a seamless Next.js front-end. 20% waste reduction and 50% faster quotes from day one. ROI was evident within weeks.",
+      "We needed an AI quoting engine that could cut material waste and speed up our sales cycle. Apex Circuit built exactly that: an ML nesting algorithm integrated into a seamless Next.js front-end. 20% waste reduction and 50% faster quotes from day one. ROI was evident within weeks.",
     name: "Stefan Vogt",
     role: "Managing Director",
+    company: "Vogt Fabrication GmbH",
     sector: "Industrial",
-    stars: 5,
-    initial: "SV",
+    photo: "https://randomuser.me/api/portraits/men/75.jpg",
     gradient: "from-[#D97706] to-[#F59E0B]",
+    accent: "#D97706",
   },
   {
     quote:
       "Apex Circuit redesigned and rebuilt our entire property portal from the ground up. The interactive maps, advanced search, and agent CRM they built are enterprise-grade. The site performs brilliantly on mobile, and our leads have increased measurably since launch.",
     name: "Priya Sharma",
     role: "Product Director",
+    company: "Landmark Properties",
     sector: "PropTech",
-    stars: 5,
-    initial: "PS",
+    photo: "https://randomuser.me/api/portraits/women/19.jpg",
     gradient: "from-[#0891B2] to-[#06B6D4]",
+    accent: "#0891B2",
   },
 ];
 
@@ -172,6 +179,34 @@ export default function Testimonials() {
           </h2>
         </div>
 
+        {/* Avatar selector row */}
+        <div className="flex justify-center gap-3 mb-10 flex-wrap">
+          {testimonials.map((t, i) => (
+            <button
+              key={i}
+              onClick={() => { setActive(i); setPaused(true); }}
+              className={`relative transition-all duration-300 ${i === active ? "scale-110" : "opacity-50 hover:opacity-80 hover:scale-105"}`}
+            >
+              <div
+                className={`w-14 h-14 rounded-2xl overflow-hidden border-2 transition-all duration-300 ${i === active ? "border-white shadow-lg" : "border-white/10"}`}
+                style={i === active ? { boxShadow: `0 0 16px ${t.accent}70` } : {}}
+              >
+                <Image
+                  src={t.photo}
+                  alt={t.name}
+                  width={56}
+                  height={56}
+                  className="w-full h-full object-cover object-top"
+                  unoptimized
+                />
+              </div>
+              {i === active && (
+                <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-white" />
+              )}
+            </button>
+          ))}
+        </div>
+
         <div
           className="relative max-w-4xl mx-auto"
           onMouseEnter={() => setPaused(true)}
@@ -188,11 +223,7 @@ export default function Testimonials() {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.4 }}
                 className="h-1 w-full"
-                style={{
-                  background: `linear-gradient(90deg, ${
-                    ["#DC2626","#7C3AED","#059669","#8B0000","#D97706","#0891B2"][active]
-                  }, transparent 70%)`,
-                }}
+                style={{ background: `linear-gradient(90deg, ${testimonials[active].accent}, transparent 70%)` }}
               />
             </AnimatePresence>
 
@@ -213,12 +244,23 @@ export default function Testimonials() {
 
                   <div className="flex items-center justify-between flex-wrap gap-4">
                     <div className="flex items-center gap-4">
-                      <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${testimonials[active].gradient} flex items-center justify-center flex-shrink-0`}>
-                        <span className="text-white font-bold text-sm">{testimonials[active].initial}</span>
+                      <div
+                        className="w-14 h-14 rounded-2xl overflow-hidden flex-shrink-0 border-2"
+                        style={{ borderColor: `${testimonials[active].accent}50` }}
+                      >
+                        <Image
+                          src={testimonials[active].photo}
+                          alt={testimonials[active].name}
+                          width={56}
+                          height={56}
+                          className="w-full h-full object-cover object-top"
+                          unoptimized
+                        />
                       </div>
                       <div>
                         <p className="text-white font-bold text-sm">{testimonials[active].name}</p>
-                        <p className="text-xs text-gray-500">{testimonials[active].role}</p>
+                        <p className="text-xs text-gray-400">{testimonials[active].role}</p>
+                        <p className="text-xs text-gray-600 mb-1">{testimonials[active].company}</p>
                         <StarRow />
                       </div>
                     </div>
@@ -240,7 +282,6 @@ export default function Testimonials() {
               <ChevronLeft className="w-4 h-4" />
             </button>
 
-            {/* Dots */}
             <div className="flex gap-2">
               {testimonials.map((_, i) => (
                 <button

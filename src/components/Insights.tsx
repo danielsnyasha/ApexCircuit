@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { BookOpen, ArrowRight, Clock, Tag } from "lucide-react";
 
@@ -125,33 +126,37 @@ export default function Insights() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-8 rounded-2xl border border-white/8 bg-white/[0.02] overflow-hidden group hover:border-white/15 transition-colors duration-300"
+          className="mb-8"
         >
-          <div className="grid sm:grid-cols-5">
-            {/* Color band */}
-            <div className={`sm:col-span-1 h-2 sm:h-auto bg-gradient-to-br ${articles[0].gradient} opacity-70`} />
-            <div className="sm:col-span-4 p-8">
-              <div className="flex flex-wrap items-center gap-3 mb-4">
-                <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold border ${articles[0].categoryBg} ${articles[0].categoryColor}`}>
-                  <Tag className="w-3 h-3" />
-                  {articles[0].category}
+          <Link
+            href={`/insights/${articles[0].slug}`}
+            className="block rounded-2xl border border-white/8 bg-white/[0.02] overflow-hidden group hover:border-white/15 transition-colors duration-300"
+          >
+            <div className="grid sm:grid-cols-5">
+              <div className={`sm:col-span-1 h-2 sm:h-auto bg-gradient-to-br ${articles[0].gradient} opacity-70`} />
+              <div className="sm:col-span-4 p-8">
+                <div className="flex flex-wrap items-center gap-3 mb-4">
+                  <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold border ${articles[0].categoryBg} ${articles[0].categoryColor}`}>
+                    <Tag className="w-3 h-3" />
+                    {articles[0].category}
+                  </span>
+                  <span className="text-xs text-gray-600 flex items-center gap-1.5">
+                    <Clock className="w-3 h-3" />
+                    {articles[0].readTime}
+                  </span>
+                  <span className="text-xs text-gray-600">{articles[0].date}</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-gray-100 transition-colors">
+                  {articles[0].title}
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed mb-5">{articles[0].excerpt}</p>
+                <span className={`inline-flex items-center gap-1.5 text-sm font-semibold ${articles[0].categoryColor} group-hover:gap-2.5 transition-all duration-200`}>
+                  Read article
+                  <ArrowRight className="w-4 h-4" />
                 </span>
-                <span className="text-xs text-gray-600 flex items-center gap-1.5">
-                  <Clock className="w-3 h-3" />
-                  {articles[0].readTime}
-                </span>
-                <span className="text-xs text-gray-600">{articles[0].date}</span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-gray-100 transition-colors">
-                {articles[0].title}
-              </h3>
-              <p className="text-gray-400 text-sm leading-relaxed mb-5">{articles[0].excerpt}</p>
-              <span className={`inline-flex items-center gap-1.5 text-sm font-semibold ${articles[0].categoryColor} group-hover:gap-2.5 transition-all duration-200`}>
-                Read article
-                <ArrowRight className="w-4 h-4" />
-              </span>
             </div>
-          </div>
+          </Link>
         </motion.div>
 
         {/* Grid of remaining articles */}
@@ -163,36 +168,39 @@ export default function Insights() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="group rounded-2xl border border-white/8 bg-white/[0.02] overflow-hidden hover:border-white/15 transition-colors duration-300 flex flex-col"
             >
-              {/* Top gradient band */}
-              <div className={`h-1.5 bg-gradient-to-r ${article.gradient}`} />
+              <Link
+                href={`/insights/${article.slug}`}
+                className="group rounded-2xl border border-white/8 bg-white/[0.02] overflow-hidden hover:border-white/15 transition-colors duration-300 flex flex-col h-full block"
+              >
+                <div className={`h-1.5 bg-gradient-to-r ${article.gradient}`} />
 
-              <div className="p-6 flex flex-col flex-1">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-semibold border ${article.categoryBg} ${article.categoryColor}`}>
-                    <Tag className="w-2.5 h-2.5" />
-                    {article.category}
-                  </span>
-                  <span className="text-[11px] text-gray-600 flex items-center gap-1">
-                    <Clock className="w-3 h-3" />
-                    {article.readTime}
-                  </span>
+                <div className="p-6 flex flex-col flex-1">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-semibold border ${article.categoryBg} ${article.categoryColor}`}>
+                      <Tag className="w-2.5 h-2.5" />
+                      {article.category}
+                    </span>
+                    <span className="text-[11px] text-gray-600 flex items-center gap-1">
+                      <Clock className="w-3 h-3" />
+                      {article.readTime}
+                    </span>
+                  </div>
+
+                  <h3 className="text-base font-bold text-white mb-2 leading-snug group-hover:text-gray-100 transition-colors flex-1">
+                    {article.title}
+                  </h3>
+                  <p className="text-sm text-gray-500 leading-relaxed mb-5 line-clamp-3">{article.excerpt}</p>
+
+                  <div className="flex items-center justify-between mt-auto">
+                    <span className="text-[11px] text-gray-600">{article.date}</span>
+                    <span className={`inline-flex items-center gap-1 text-[11px] font-semibold ${article.categoryColor} group-hover:gap-1.5 transition-all duration-200`}>
+                      Read
+                      <ArrowRight className="w-3 h-3" />
+                    </span>
+                  </div>
                 </div>
-
-                <h3 className="text-base font-bold text-white mb-2 leading-snug group-hover:text-gray-100 transition-colors flex-1">
-                  {article.title}
-                </h3>
-                <p className="text-sm text-gray-500 leading-relaxed mb-5 line-clamp-3">{article.excerpt}</p>
-
-                <div className="flex items-center justify-between mt-auto">
-                  <span className="text-[11px] text-gray-600">{article.date}</span>
-                  <span className={`inline-flex items-center gap-1 text-[11px] font-semibold ${article.categoryColor} group-hover:gap-1.5 transition-all duration-200`}>
-                    Read
-                    <ArrowRight className="w-3 h-3" />
-                  </span>
-                </div>
-              </div>
+              </Link>
             </motion.div>
           ))}
         </div>
