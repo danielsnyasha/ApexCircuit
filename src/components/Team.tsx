@@ -186,7 +186,7 @@ function MemberCard({ member }: { member: TeamMember }) {
         {member.location && (
           <div className="absolute top-3 left-3 flex items-center gap-1 bg-black/50 backdrop-blur-md rounded-full px-2.5 py-1 border border-white/10">
             <span className="text-[11px]">{member.flag}</span>
-            <span className="text-[10px] text-gray-300 font-medium">{member.location}</span>
+            <span className="text-[10px] dark:text-gray-300 text-gray-700 font-medium">{member.location}</span>
           </div>
         )}
 
@@ -224,7 +224,7 @@ function MemberCard({ member }: { member: TeamMember }) {
           {member.tags.map((tag) => (
             <span
               key={tag}
-              className="px-2 py-0.5 rounded-md text-[10px] bg-white/5 text-gray-400 border border-white/5"
+              className="px-2 py-0.5 rounded-md text-[10px] dark:bg-white/5 dark:border-white/5 bg-black/5 border border-black/10 dark:text-gray-400 text-gray-600"
             >
               {tag}
             </span>
@@ -272,7 +272,7 @@ export default function Team() {
           className="flex items-center gap-3 mb-6"
         >
           <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gray-500">Engineering</span>
-          <div className="flex-1 h-px bg-white/5" />
+          <div className="flex-1 h-px dark:bg-white/5 bg-black/5" />
         </motion.div>
 
         {/* Engineers Grid — 5 cards */}
@@ -297,7 +297,7 @@ export default function Team() {
           className="flex items-center gap-3 mb-6"
         >
           <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gray-500">Consulting & Operations</span>
-          <div className="flex-1 h-px bg-white/5" />
+          <div className="flex-1 h-px dark:bg-white/5 bg-black/5" />
         </motion.div>
 
         {/* Other Roles Grid */}

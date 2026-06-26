@@ -277,7 +277,7 @@ export default function Testimonials() {
           <div className="flex items-center justify-between mt-6">
             <button
               onClick={prev}
-              className="p-2.5 rounded-xl border border-white/10 text-gray-400 hover:text-white hover:border-white/20 transition-all"
+              className="p-2.5 rounded-xl border dark:border-white/10 dark:text-gray-400 dark:hover:text-white dark:hover:border-white/20 border-black/10 text-gray-600 hover:text-gray-900 hover:border-black/20 transition-all"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
@@ -296,7 +296,7 @@ export default function Testimonials() {
 
             <button
               onClick={next}
-              className="p-2.5 rounded-xl border border-white/10 text-gray-400 hover:text-white hover:border-white/20 transition-all"
+              className="p-2.5 rounded-xl border dark:border-white/10 dark:text-gray-400 dark:hover:text-white dark:hover:border-white/20 border-black/10 text-gray-600 hover:text-gray-900 hover:border-black/20 transition-all"
             >
               <ChevronRight className="w-4 h-4" />
             </button>

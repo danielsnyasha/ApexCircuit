@@ -160,7 +160,7 @@ export default function Navigation() {
 
             {/* Mobile Menu */}
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-              <SheetTrigger className="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors">
+              <SheetTrigger className="md:hidden p-2 rounded-lg dark:text-gray-400 dark:hover:text-white dark:hover:bg-white/5 text-gray-600 hover:text-gray-900 hover:bg-black/5 transition-colors">
                 <Menu className="w-5 h-5" />
                 <span className="sr-only">Open menu</span>
               </SheetTrigger>

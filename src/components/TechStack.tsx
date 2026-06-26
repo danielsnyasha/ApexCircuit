@@ -119,7 +119,7 @@ function TechCard({ item }: { item: TechItem }) {
           />
         ) : null}
       </div>
-      <span className="text-[14px] font-medium dark:text-gray-300 text-gray-700 whitespace-nowrap dark:group-hover:text-white group-hover:text-gray-900 transition-colors duration-300">
+      <span className="text-[14px] font-medium dark:dark:text-gray-300 text-gray-700 text-gray-700 whitespace-nowrap dark:group-hover:text-white group-hover:text-gray-900 transition-colors duration-300">
         {item.name}
       </span>
     </div>

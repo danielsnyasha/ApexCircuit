@@ -213,7 +213,7 @@ export default function Contact() {
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
             Start Your <span className="gradient-text">Project</span>
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="text-lg dark:text-gray-400 text-gray-600 max-w-2xl mx-auto">
             Tell us about your project. We&apos;ll get back within 24 hours with
             a clear plan or tell you honestly if we&apos;re not the right fit.
           </p>
@@ -306,7 +306,7 @@ export default function Contact() {
                     <CheckCircle2 className="w-8 h-8 text-green-400" />
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-2">Message Received!</h3>
-                  <p className="text-gray-400 text-sm max-w-xs">
+                  <p className="dark:text-gray-400 text-gray-600 text-sm max-w-xs">
                     We&apos;ll review your project details and get back to you within 24 hours.
                   </p>
                   <button
@@ -321,7 +321,7 @@ export default function Contact() {
                   {/* Name Row */}
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
-                      <Label htmlFor="firstName" className="text-xs text-gray-400">
+                      <Label htmlFor="firstName" className="text-xs dark:text-gray-400 text-gray-600">
                         First Name <span className="text-red-500">*</span>
                       </Label>
                       <Input
@@ -334,7 +334,7 @@ export default function Contact() {
                       />
                     </div>
                     <div className="space-y-1.5">
-                      <Label htmlFor="lastName" className="text-xs text-gray-400">
+                      <Label htmlFor="lastName" className="text-xs dark:text-gray-400 text-gray-600">
                         Last Name <span className="text-red-500">*</span>
                       </Label>
                       <Input
@@ -351,7 +351,7 @@ export default function Contact() {
                   {/* Email / Phone */}
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
-                      <Label htmlFor="email" className="text-xs text-gray-400">
+                      <Label htmlFor="email" className="text-xs dark:text-gray-400 text-gray-600">
                         Email Address <span className="text-red-500">*</span>
                       </Label>
                       <Input
@@ -365,7 +365,7 @@ export default function Contact() {
                       />
                     </div>
                     <div className="space-y-1.5">
-                      <Label htmlFor="phone" className="text-xs text-gray-400">Phone Number</Label>
+                      <Label htmlFor="phone" className="text-xs dark:text-gray-400 text-gray-600">Phone Number</Label>
                       <Input
                         id="phone"
                         type="tel"
@@ -379,7 +379,7 @@ export default function Contact() {
 
                   {/* Company */}
                   <div className="space-y-1.5">
-                    <Label htmlFor="company" className="text-xs text-gray-400">Company / Organization</Label>
+                    <Label htmlFor="company" className="text-xs dark:text-gray-400 text-gray-600">Company / Organization</Label>
                     <Input
                       id="company"
                       placeholder="Acme Corp"
@@ -392,7 +392,7 @@ export default function Contact() {
                   {/* Service + Budget */}
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
-                      <Label className="text-xs text-gray-400">
+                      <Label className="text-xs dark:text-gray-400 text-gray-600">
                         Service Required <span className="text-red-500">*</span>
                       </Label>
                       <Select onValueChange={handleSelect("service")} value={form.service}>
@@ -410,7 +410,7 @@ export default function Contact() {
                       </Select>
                     </div>
                     <div className="space-y-1.5">
-                      <Label className="text-xs text-gray-400">Project Budget</Label>
+                      <Label className="text-xs dark:text-gray-400 text-gray-600">Project Budget</Label>
                       <Select onValueChange={handleSelect("budget")} value={form.budget}>
                         <SelectTrigger className={`${inputClass} w-full`}>
                           <SelectValue placeholder="Select budget..." />
@@ -429,7 +429,7 @@ export default function Contact() {
                   {/* Timeline + Company Size */}
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
-                      <Label className="text-xs text-gray-400">Timeline</Label>
+                      <Label className="text-xs dark:text-gray-400 text-gray-600">Timeline</Label>
                       <Select onValueChange={handleSelect("timeline")} value={form.timeline}>
                         <SelectTrigger className={`${inputClass} w-full`}>
                           <SelectValue placeholder="Select timeline..." />
@@ -444,7 +444,7 @@ export default function Contact() {
                       </Select>
                     </div>
                     <div className="space-y-1.5">
-                      <Label className="text-xs text-gray-400">Company Size</Label>
+                      <Label className="text-xs dark:text-gray-400 text-gray-600">Company Size</Label>
                       <Select onValueChange={handleSelect("companySize")} value={form.companySize}>
                         <SelectTrigger className={`${inputClass} w-full`}>
                           <SelectValue placeholder="Select size..." />
@@ -462,7 +462,7 @@ export default function Contact() {
 
                   {/* Description */}
                   <div className="space-y-1.5">
-                    <Label htmlFor="description" className="text-xs text-gray-400">
+                    <Label htmlFor="description" className="text-xs dark:text-gray-400 text-gray-600">
                       Project Description <span className="text-red-500">*</span>
                     </Label>
                     <Textarea
@@ -478,7 +478,7 @@ export default function Contact() {
 
                   {/* File Upload Zone */}
                   <div className="space-y-2">
-                    <Label className="text-xs text-gray-400">
+                    <Label className="text-xs dark:text-gray-400 text-gray-600">
                       Attachments
                       <span className="ml-1 text-gray-600 font-normal">(images, PDFs, documents — up to 5 files, 10 MB each)</span>
                     </Label>
@@ -541,7 +541,7 @@ export default function Contact() {
                             <button
                               type="button"
                               onClick={() => removeFile(idx)}
-                              className="w-6 h-6 rounded-full flex items-center justify-center text-gray-500 hover:text-white hover:bg-white/10 transition-colors flex-shrink-0"
+                              className="w-6 h-6 rounded-full flex items-center justify-center text-gray-500 dark:hover:text-white hover:text-gray-900 dark:hover:bg-white/10 hover:bg-black/10 transition-colors flex-shrink-0"
                             >
                               <X className="w-3.5 h-3.5" />
                             </button>

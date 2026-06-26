@@ -14,7 +14,8 @@ const tiers = [
     period: "scoped to your project",
     color: "from-[#1E3A8A] to-[#2563EB]",
     border: "border-blue-800/30",
-    accent: "text-blue-400",
+    accent: "dark:text-blue-400 text-blue-700",
+    checkColor: "dark:text-blue-400 text-blue-600",
     glow: "shadow-blue-900/20",
     features: [
       "Discovery & scoping workshop",
@@ -36,7 +37,8 @@ const tiers = [
     period: "tailored to your capacity needs",
     color: "from-[#8B0000] to-[#DC2626]",
     border: "border-red-800/30",
-    accent: "text-red-400",
+    accent: "dark:text-red-400 text-red-700",
+    checkColor: "dark:text-red-400 text-red-600",
     glow: "shadow-red-900/30",
     features: [
       "Dedicated engineering capacity",
@@ -59,7 +61,8 @@ const tiers = [
     period: "transparent time tracking",
     color: "from-[#059669] to-[#10B981]",
     border: "border-green-800/30",
-    accent: "text-green-400",
+    accent: "dark:text-green-400 text-green-700",
+    checkColor: "dark:text-green-400 text-green-600",
     glow: "shadow-green-900/20",
     features: [
       "No long-term commitment",
@@ -100,7 +103,7 @@ export default function Pricing() {
     <section id="pricing" className="relative py-24 sm:py-32 bg-background-alt overflow-hidden">
       <div className="absolute inset-0 dot-grid opacity-20" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#8B0000]/40 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent dark:via-white/5 via-black/5 to-transparent" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -136,7 +139,7 @@ export default function Pricing() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className={`relative rounded-2xl border ${tier.border} dark:bg-white/[0.02] bg-white p-8 flex flex-col ${tier.popular ? `shadow-xl ${tier.glow}` : ""}`}
+                className={`relative rounded-2xl border ${tier.border} dark:bg-white/[0.02] bg-white p-8 flex flex-col ${tier.popular ? `shadow-xl ${tier.glow}` : "shadow-sm"}`}
               >
                 {tier.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
@@ -152,19 +155,19 @@ export default function Pricing() {
 
                 <h3 className="text-xl font-bold text-foreground mb-1">{tier.name}</h3>
                 <p className={`text-xs font-semibold uppercase tracking-widest ${tier.accent} mb-4`}>{tier.tagline}</p>
-                <p className="text-sm text-gray-400 leading-relaxed mb-6">{tier.description}</p>
+                <p className="text-sm dark:text-gray-400 text-gray-600 leading-relaxed mb-6">{tier.description}</p>
 
                 <div className="mb-6">
                   <div className="flex items-baseline gap-2">
                     <span className="text-3xl font-black text-foreground">{tier.range}</span>
                   </div>
-                  <span className="text-xs text-gray-500">{tier.period}</span>
+                  <span className="text-xs dark:text-gray-500 text-gray-500">{tier.period}</span>
                 </div>
 
                 <ul className="space-y-2.5 mb-8 flex-1">
                   {tier.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2.5 text-sm text-gray-300">
-                      <Check className={`w-4 h-4 mt-0.5 flex-shrink-0 ${tier.accent}`} />
+                    <li key={f} className="flex items-start gap-2.5 text-sm dark:text-gray-300 text-gray-700">
+                      <Check className={`w-4 h-4 mt-0.5 flex-shrink-0 ${tier.checkColor}`} />
                       {f}
                     </li>
                   ))}
@@ -175,7 +178,7 @@ export default function Pricing() {
                   className={`w-full py-3 rounded-xl text-sm font-bold transition-all duration-300 flex items-center justify-center gap-2 group ${
                     tier.popular
                       ? "bg-gradient-to-r from-[#8B0000] to-[#A52020] text-white hover:from-[#A52020] hover:to-[#DC2626] shadow-lg shadow-red-900/20"
-                      : `border ${tier.border} ${tier.accent} hover:bg-white/5`
+                      : `border ${tier.border} ${tier.accent} dark:hover:bg-white/5 hover:bg-black/5`
                   }`}
                 >
                   {tier.cta}
@@ -192,7 +195,7 @@ export default function Pricing() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="rounded-2xl border dark:border-white/8 border-black/8 dark:bg-white/[0.02] bg-white p-8 flex flex-col sm:flex-row items-center justify-between gap-6 mb-20"
+          className="rounded-2xl border dark:border-white/8 border-black/8 dark:bg-white/[0.02] bg-white shadow-sm p-8 flex flex-col sm:flex-row items-center justify-between gap-6 mb-20"
         >
           <div>
             <h4 className="text-lg font-bold text-foreground mb-1">Enterprise & Government</h4>
@@ -202,7 +205,7 @@ export default function Pricing() {
           </div>
           <button
             onClick={scrollToContact}
-            className="shrink-0 flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white font-bold text-sm hover:bg-white/10 hover:border-white/20 transition-all duration-300 group"
+            className="shrink-0 flex items-center gap-2 px-7 py-3.5 rounded-xl dark:bg-white/5 dark:border-white/10 dark:text-white dark:hover:bg-white/10 dark:hover:border-white/20 bg-black/5 border border-black/10 text-gray-800 hover:bg-black/10 hover:border-black/20 font-bold text-sm transition-all duration-300 group"
           >
             Talk to Us
             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
@@ -219,7 +222,7 @@ export default function Pricing() {
           <h3 className="text-xl font-bold text-foreground text-center mb-8">Frequently Asked</h3>
           <div className="grid sm:grid-cols-2 gap-6">
             {faqs.map((faq) => (
-              <div key={faq.q} className="rounded-xl border dark:border-white/8 border-black/8 dark:bg-white/[0.02] bg-white p-6">
+              <div key={faq.q} className="rounded-xl border dark:border-white/8 border-black/8 dark:bg-white/[0.02] bg-white shadow-sm p-6">
                 <h4 className="text-sm font-bold text-foreground mb-2">{faq.q}</h4>
                 <p className="text-sm dark:text-gray-400 text-gray-600 leading-relaxed">{faq.a}</p>
               </div>

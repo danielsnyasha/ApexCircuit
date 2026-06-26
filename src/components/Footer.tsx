@@ -128,7 +128,7 @@ export default function Footer() {
                     ) : (
                       <button
                         onClick={() => scrollTo(link.href)}
-                        className="flex items-center gap-1 text-sm text-gray-500 hover:text-gray-300 transition-colors duration-200 group"
+                        className="flex items-center gap-1 text-sm text-gray-500 hover:dark:text-gray-300 text-gray-700 transition-colors duration-200 group"
                       >
                         {link.label}
                         {"external" in link && link.external && (
@@ -194,7 +194,7 @@ export default function Footer() {
             <span className="text-xs text-gray-700">Apex Circuit Ltd.</span>
             <button
               onClick={scrollToTop}
-              className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-500 hover:text-white hover:bg-white/10 transition-all duration-300"
+              className="w-8 h-8 rounded-lg dark:bg-white/5 dark:border-white/10 dark:text-gray-500 dark:hover:text-white dark:hover:bg-white/10 bg-black/5 border border-black/10 text-gray-600 hover:text-gray-900 hover:bg-black/10 flex items-center justify-center transition-all duration-300"
               aria-label="Back to top"
             >
               <ArrowUp className="w-3.5 h-3.5" />

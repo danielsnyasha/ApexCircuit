@@ -78,7 +78,7 @@ function Lightbox({
         {/* Close */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 z-10 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+          className="absolute top-5 right-5 z-10 p-2 rounded-full bg-black/40 hover:bg-black/60 text-white transition-colors backdrop-blur-sm"
         >
           <X className="w-5 h-5" />
         </button>
@@ -111,13 +111,13 @@ function Lightbox({
         {/* Arrows */}
         <button
           onClick={(e) => { e.stopPropagation(); prev(); }}
-          className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+          className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/40 hover:bg-black/60 text-white transition-colors backdrop-blur-sm"
         >
           <ChevronLeft className="w-6 h-6" />
         </button>
         <button
           onClick={(e) => { e.stopPropagation(); next(); }}
-          className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+          className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/40 hover:bg-black/60 text-white transition-colors backdrop-blur-sm"
         >
           <ChevronRight className="w-6 h-6" />
         </button>
@@ -565,7 +565,7 @@ export default function Services() {
                         <h3 className="text-2xl sm:text-3xl font-black text-foreground mb-3 leading-tight">
                           {service.title}
                         </h3>
-                        <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-lg">
+                        <p className="dark:text-gray-400 text-gray-600 text-sm leading-relaxed mb-6 max-w-lg">
                           {service.description}
                         </p>
 
@@ -659,7 +659,7 @@ export default function Services() {
                     {service.title}
                   </h3>
 
-                  <p className="text-gray-500 text-sm leading-relaxed mb-5 flex-1 group-hover:text-gray-400 transition-colors">
+                  <p className="dark:text-gray-500 text-gray-600 text-sm leading-relaxed mb-5 flex-1 dark:group-hover:text-gray-400 group-hover:text-gray-800 transition-colors">
                     {service.description}
                   </p>
 

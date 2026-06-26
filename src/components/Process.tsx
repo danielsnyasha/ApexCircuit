@@ -89,7 +89,7 @@ export default function Process() {
             From brief to production,{" "}
             <span className="gradient-text">step by step</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="dark:text-gray-400 text-gray-600 text-lg max-w-2xl mx-auto">
             A structured six-phase engagement model that eliminates surprises, keeps you in control,
             and delivers working software on time.
           </p>
