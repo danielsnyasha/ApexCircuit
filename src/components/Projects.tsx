@@ -320,8 +320,8 @@ function CaseStudyDrawer({ project, onClose }: { project: Project; onClose: () =
         <div className="p-6 sm:p-8 space-y-8">
           {/* Badge row */}
           <div className="flex flex-wrap gap-2">
-            <span className="text-[10px] px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-gray-400">{project.period}</span>
-            <span className={`text-[10px] px-2.5 py-1 rounded-full border ${project.border} ${project.accent} bg-white/[0.02]`}>
+            <span className="text-[10px] px-2.5 py-1 rounded-full dark:bg-white/5 dark:border-white/10 dark:text-gray-400 bg-black/5 border border-black/10 text-gray-500">{project.period}</span>
+            <span className={`text-[10px] px-2.5 py-1 rounded-full border ${project.border} ${project.accent} dark:bg-white/[0.02] bg-black/[0.02]`}>
               Case Study
             </span>
           </div>
@@ -334,7 +334,7 @@ function CaseStudyDrawer({ project, onClose }: { project: Project; onClose: () =
               </div>
               <h4 className="text-sm font-bold text-foreground">The Challenge</h4>
             </div>
-            <p className="text-sm text-gray-400 leading-relaxed">{project.caseStudy.challenge}</p>
+            <p className="text-sm dark:text-gray-400 text-gray-600 leading-relaxed">{project.caseStudy.challenge}</p>
           </div>
 
           {/* Approach */}
@@ -345,7 +345,7 @@ function CaseStudyDrawer({ project, onClose }: { project: Project; onClose: () =
               </div>
               <h4 className="text-sm font-bold text-foreground">Our Approach</h4>
             </div>
-            <p className="text-sm text-gray-400 leading-relaxed">{project.caseStudy.approach}</p>
+            <p className="text-sm dark:text-gray-400 text-gray-600 leading-relaxed">{project.caseStudy.approach}</p>
           </div>
 
           {/* Outcome */}
@@ -356,17 +356,17 @@ function CaseStudyDrawer({ project, onClose }: { project: Project; onClose: () =
               </div>
               <h4 className="text-sm font-bold text-foreground">The Outcome</h4>
             </div>
-            <p className="text-sm text-gray-400 leading-relaxed">{project.caseStudy.outcome}</p>
+            <p className="text-sm dark:text-gray-400 text-gray-600 leading-relaxed">{project.caseStudy.outcome}</p>
           </div>
 
           {/* Metrics */}
           <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-gray-600 mb-3">Key Results</p>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.15em] dark:text-gray-600 text-gray-500 mb-3">Key Results</p>
             <div className="grid grid-cols-2 gap-3">
               {project.metrics.map((m) => (
-                <div key={m.label} className={`rounded-xl p-4 bg-white/[0.03] border ${project.border} text-center`}>
+                <div key={m.label} className={`rounded-xl p-4 dark:bg-white/[0.03] bg-black/[0.03] border ${project.border} text-center`}>
                   <div className={`text-xl font-black ${project.accent}`}>{m.value}</div>
-                  <div className="text-[11px] text-gray-500 mt-0.5">{m.label}</div>
+                  <div className="text-[11px] dark:text-gray-500 text-gray-500 mt-0.5">{m.label}</div>
                 </div>
               ))}
             </div>
@@ -374,10 +374,10 @@ function CaseStudyDrawer({ project, onClose }: { project: Project; onClose: () =
 
           {/* Tech Stack */}
           <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-gray-600 mb-3">Tech Stack</p>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.15em] dark:text-gray-600 text-gray-500 mb-3">Tech Stack</p>
             <div className="flex flex-wrap gap-1.5">
               {project.stack.map((tech) => (
-                <span key={tech} className="px-2.5 py-1 rounded-lg text-[11px] font-medium bg-white/[0.04] border border-white/[0.07] text-gray-300">
+                <span key={tech} className="px-2.5 py-1 rounded-lg text-[11px] font-medium dark:bg-white/[0.04] dark:border-white/[0.07] dark:text-gray-300 bg-black/[0.04] border border-black/[0.08] text-gray-600">
                   {tech}
                 </span>
               ))}
@@ -474,7 +474,7 @@ export default function Projects() {
               className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 border ${
                 filter === cat
                   ? "dark:bg-[#8B0000]/20 dark:border-[#8B0000]/50 dark:text-red-300 bg-red-50 border-red-300 text-red-700"
-                  : "border-white/10 text-gray-500 hover:text-gray-300 hover:border-white/20"
+                  : "dark:border-white/10 dark:text-gray-500 dark:hover:text-gray-300 dark:hover:border-white/20 border-black/10 text-gray-500 hover:text-gray-800 hover:border-black/20 hover:bg-black/[0.03]"
               }`}
             >
               {cat}
@@ -508,20 +508,20 @@ export default function Projects() {
                   onClick={() => setActive(i)}
                   className={`group flex items-center gap-3 px-4 py-3 rounded-xl text-left transition-all duration-300 shrink-0 lg:shrink border ${
                     isActive
-                      ? `dark:bg-white/[0.06] bg-black/[0.03] ${p.border} shadow-lg ${p.glow}`
-                      : "border-transparent dark:hover:bg-white/[0.03] dark:hover:border-white/5 hover:bg-black/[0.02] hover:border-black/5"
+                      ? `dark:bg-white/[0.06] bg-white shadow-md ${p.border}`
+                      : "border-transparent dark:hover:bg-white/[0.03] dark:hover:border-white/5 hover:bg-white/80 hover:border-black/5"
                   }`}
                 >
                   <div className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 transition-all duration-300 ${
-                    isActive ? `bg-gradient-to-br ${p.gradient}` : "bg-white/5 group-hover:bg-white/10"
+                    isActive ? `bg-gradient-to-br ${p.gradient}` : "dark:bg-white/5 dark:group-hover:bg-white/10 bg-black/5 group-hover:bg-black/10"
                   }`}>
-                    <Icon className={`w-3.5 h-3.5 ${isActive ? "text-white" : "text-gray-500 group-hover:text-gray-300"}`} />
+                    <Icon className={`w-3.5 h-3.5 ${isActive ? "text-white" : "dark:text-gray-500 dark:group-hover:text-gray-300 text-gray-500 group-hover:text-gray-700"}`} />
                   </div>
                   <div className="min-w-0">
-                    <p className={`text-[11px] font-semibold truncate transition-colors duration-200 ${isActive ? "text-white" : "text-gray-500 group-hover:text-gray-300"}`}>
+                    <p className={`text-[11px] font-semibold truncate transition-colors duration-200 ${isActive ? "dark:text-white text-foreground" : "dark:text-gray-500 dark:group-hover:text-gray-300 text-gray-600 group-hover:text-gray-900"}`}>
                       {p.name}
                     </p>
-                    <p className={`text-[10px] transition-colors duration-200 ${isActive ? p.accent : "text-gray-600"}`}>
+                    <p className={`text-[10px] transition-colors duration-200 ${isActive ? p.accent : "text-gray-500"}`}>
                       {p.category}
                     </p>
                   </div>
@@ -557,7 +557,7 @@ export default function Projects() {
                   priority
                 />
                 {/* Gradient overlay — blends into card below */}
-                <div className={`absolute inset-0 bg-gradient-to-t from-[#13131E] via-[#13131E]/40 to-transparent`} />
+                <div className="absolute inset-0 bg-gradient-to-t dark:from-[#13131E] dark:via-[#13131E]/40 from-white/80 via-white/20 to-transparent" />
                 {/* Gradient tint from project colour */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-10`} />
                 {/* Category + period badge top-left */}
@@ -594,7 +594,7 @@ export default function Projects() {
                   </div>
                   <button
                     onClick={() => setCaseStudyOpen(true)}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-[11px] font-semibold transition-all duration-200 shrink-0 ${project.border} ${project.accent} hover:bg-white/5`}
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-[11px] font-semibold transition-all duration-200 shrink-0 ${project.border} ${project.accent} dark:hover:bg-white/5 hover:bg-black/5`}
                   >
                     <BookOpen className="w-3 h-3" />
                     Case Study
@@ -607,28 +607,28 @@ export default function Projects() {
                 </motion.p>
 
                 {/* Description */}
-                <motion.p variants={childVariants} className="text-sm text-gray-400 leading-relaxed mb-7">
+                <motion.p variants={childVariants} className="text-sm dark:text-gray-400 text-gray-600 leading-relaxed mb-7">
                   {project.description}
                 </motion.p>
 
                 {/* Metrics */}
                 <motion.div variants={childVariants} className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-7">
                   {project.metrics.map((m) => (
-                    <div key={m.label} className={`rounded-xl p-3 bg-white/[0.03] border ${project.border} text-center`}>
+                    <div key={m.label} className={`rounded-xl p-3 dark:bg-white/[0.03] bg-black/[0.03] border ${project.border} text-center`}>
                       <div className={`text-lg font-black ${project.accent}`}>{m.value}</div>
-                      <div className="text-[10px] text-gray-600 mt-0.5 leading-tight">{m.label}</div>
+                      <div className="text-[10px] dark:text-gray-600 text-gray-500 mt-0.5 leading-tight">{m.label}</div>
                     </div>
                   ))}
                 </motion.div>
 
                 {/* Stack */}
                 <motion.div variants={childVariants}>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-gray-600 mb-2.5">Tech Stack</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.15em] dark:text-gray-600 text-gray-500 mb-2.5">Tech Stack</p>
                   <div className="flex flex-wrap gap-1.5">
                     {project.stack.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2.5 py-1 rounded-lg text-[11px] font-medium bg-white/[0.04] border border-white/[0.07] text-gray-300 hover:text-white hover:border-white/15 transition-colors duration-150"
+                        className="px-2.5 py-1 rounded-lg text-[11px] font-medium dark:bg-white/[0.04] dark:border-white/[0.07] dark:text-gray-300 dark:hover:text-white dark:hover:border-white/15 bg-black/[0.04] border border-black/[0.08] text-gray-600 hover:text-gray-900 hover:border-black/15 transition-colors duration-150"
                       >
                         {tech}
                       </span>
@@ -648,7 +648,7 @@ export default function Projects() {
                     className={`h-1.5 rounded-full transition-all duration-300 ${
                       i === safeActive
                         ? `w-6 bg-gradient-to-r ${project.gradient}`
-                        : "w-1.5 bg-white/15 hover:bg-white/30"
+                        : "w-1.5 dark:bg-white/15 dark:hover:bg-white/30 bg-black/15 hover:bg-black/30"
                     }`}
                   />
                 ))}
@@ -657,13 +657,13 @@ export default function Projects() {
                 <span className="text-[11px] text-gray-600 mr-1">{safeActive + 1} / {filtered.length}</span>
                 <button
                   onClick={prev}
-                  className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-200"
+                  className="w-8 h-8 rounded-lg dark:bg-white/5 dark:border-white/10 dark:text-gray-400 dark:hover:text-white dark:hover:bg-white/10 bg-black/5 border border-black/10 text-gray-500 hover:text-gray-900 hover:bg-black/10 flex items-center justify-center transition-all duration-200"
                 >
                   <ChevronLeft className="w-4 h-4" />
                 </button>
                 <button
                   onClick={next}
-                  className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-200"
+                  className="w-8 h-8 rounded-lg dark:bg-white/5 dark:border-white/10 dark:text-gray-400 dark:hover:text-white dark:hover:bg-white/10 bg-black/5 border border-black/10 text-gray-500 hover:text-gray-900 hover:bg-black/10 flex items-center justify-center transition-all duration-200"
                 >
                   <ChevronRight className="w-4 h-4" />
                 </button>
@@ -684,7 +684,7 @@ export default function Projects() {
             href="https://github.com/danielsnyasha"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/10 text-gray-300 text-sm font-medium hover:text-white hover:border-white/20 hover:bg-white/5 transition-all duration-300 group"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border dark:border-white/10 dark:text-gray-300 dark:hover:text-white dark:hover:border-white/20 dark:hover:bg-white/5 border-black/10 text-gray-600 hover:text-gray-900 hover:border-black/20 hover:bg-black/5 text-sm font-medium transition-all duration-300 group"
           >
             <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
               <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
