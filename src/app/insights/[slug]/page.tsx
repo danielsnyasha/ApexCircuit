@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowLeft, Clock, Tag, Calendar } from "lucide-react";
+import { ArrowLeft, Clock, Tag, Calendar, Zap, Terminal } from "lucide-react";
 
 type Block =
   | { type: "h2"; text: string }
@@ -15,6 +15,8 @@ interface Article {
   slug: string;
   category: string;
   categoryColor: string;
+  categoryBg: string;
+  accent: string;
   title: string;
   excerpt: string;
   readTime: string;
@@ -28,6 +30,8 @@ const articles: Record<string, Article> = {
     slug: "erpnext-implementation-guide",
     category: "ERP",
     categoryColor: "text-cyan-400",
+    categoryBg: "bg-cyan-900/20 border-cyan-800/30",
+    accent: "#06B6D4",
     title: "ERPNext in 90 Days: Our Proven Implementation Framework",
     excerpt: "Most ERP projects run over budget and over time. Here is the exact phased approach we use to get organisations fully live in 90 days, from requirements through go-live and adoption.",
     readTime: "8 min read",
@@ -78,6 +82,8 @@ const articles: Record<string, Article> = {
     slug: "postgis-spatial-queries",
     category: "GIS",
     categoryColor: "text-yellow-400",
+    categoryBg: "bg-yellow-900/20 border-yellow-800/30",
+    accent: "#F59E0B",
     title: "PostGIS for Developers: Spatial Queries That Actually Scale",
     excerpt: "ST_DWithin, spatial indexes, and why most GIS implementations are 10x slower than they need to be. A practical deep-dive for backend engineers building location-aware systems.",
     readTime: "11 min read",
@@ -109,6 +115,8 @@ const articles: Record<string, Article> = {
     slug: "react-native-offline-first",
     category: "Mobile",
     categoryColor: "text-red-400",
+    categoryBg: "bg-red-900/20 border-red-800/30",
+    accent: "#DC2626",
     title: "Building Offline-First React Native Apps for Enterprise",
     excerpt: "Field agents don't have 5G. Here's how we architect sync engines, conflict resolution, and optimistic UI in React Native to keep enterprise apps working in any connectivity environment.",
     readTime: "9 min read",
@@ -137,6 +145,8 @@ const articles: Record<string, Article> = {
     slug: "ai-automation-business-case",
     category: "AI & Automation",
     categoryColor: "text-purple-400",
+    categoryBg: "bg-purple-900/20 border-purple-800/30",
+    accent: "#A78BFA",
     title: "How to Build a Business Case for AI Automation in 2025",
     excerpt: "CFOs don't buy AI. They buy ROI. We break down how to quantify automation value — from hours saved to error rate reduction — and present it in a language that gets sign-off.",
     readTime: "7 min read",
@@ -184,6 +194,8 @@ const articles: Record<string, Article> = {
     slug: "nextjs-ssr-performance",
     category: "Web Dev",
     categoryColor: "text-green-400",
+    categoryBg: "bg-green-900/20 border-green-800/30",
+    accent: "#10B981",
     title: "Next.js App Router: SSR vs SSG vs ISR — When to Use Each",
     excerpt: "The App Router changed the rendering model fundamentally. This guide cuts through the confusion and shows exactly when to reach for each strategy in production applications.",
     readTime: "10 min read",
@@ -219,6 +231,8 @@ const articles: Record<string, Article> = {
     slug: "enterprise-security-checklist",
     category: "Security",
     categoryColor: "text-blue-400",
+    categoryBg: "bg-blue-900/20 border-blue-800/30",
+    accent: "#2563EB",
     title: "Enterprise Application Security: The 12-Point Checklist",
     excerpt: "From OWASP Top 10 to JWT handling, secrets management, and pen testing — the security baseline every enterprise application should meet before going to production.",
     readTime: "12 min read",
@@ -276,45 +290,96 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const article = articles[slug];
   if (!article) return {};
   return {
-    title: article.title,
+    title: `${article.title} | Apex Circuit`,
     description: article.excerpt,
   };
 }
 
-function renderBlock(block: Block, key: number) {
+function renderBlock(block: Block, key: number, accent: string) {
   switch (block.type) {
     case "h2":
-      return <h2 key={key} className="text-2xl font-bold text-white mt-10 mb-4">{block.text}</h2>;
+      return (
+        <h2
+          key={key}
+          className="flex items-start gap-3 text-xl sm:text-2xl font-bold text-white mt-12 mb-4 leading-snug"
+        >
+          <span
+            className="mt-1.5 shrink-0 w-1 h-5 rounded-full"
+            style={{ background: accent }}
+          />
+          {block.text}
+        </h2>
+      );
     case "p":
-      return <p key={key} className="text-gray-300 leading-relaxed mb-4">{block.text}</p>;
+      return (
+        <p key={key} className="text-gray-300 leading-[1.85] mb-5 text-[15px]">
+          {block.text}
+        </p>
+      );
     case "ul":
       return (
-        <ul key={key} className="list-disc list-inside space-y-2 mb-6 text-gray-300">
-          {block.items.map((item, i) => <li key={i}>{item}</li>)}
+        <ul key={key} className="space-y-3 mb-7">
+          {block.items.map((item, i) => (
+            <li key={i} className="flex items-start gap-3 text-[15px] text-gray-300 leading-relaxed">
+              <span
+                className="mt-2 shrink-0 w-1.5 h-1.5 rounded-full"
+                style={{ background: accent }}
+              />
+              {item}
+            </li>
+          ))}
         </ul>
       );
     case "code":
       return (
-        <pre key={key} className="bg-white/[0.04] border border-white/10 rounded-xl p-5 overflow-x-auto mb-6 text-sm">
-          <code className="text-gray-200 font-mono whitespace-pre">{block.code}</code>
-        </pre>
+        <div key={key} className="mb-7 rounded-xl overflow-hidden border border-white/10">
+          <div className="flex items-center gap-2 px-4 py-2.5 bg-white/[0.04] border-b border-white/10">
+            <Terminal className="w-3.5 h-3.5 text-gray-500" />
+            <span className="text-[11px] font-semibold uppercase tracking-widest text-gray-500">
+              {block.lang}
+            </span>
+            <div className="ml-auto flex gap-1.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
+              <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
+              <span className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
+            </div>
+          </div>
+          <pre className="bg-[#0A0A10] p-5 overflow-x-auto text-[13px]">
+            <code className="text-emerald-300 font-mono whitespace-pre leading-relaxed">
+              {block.code}
+            </code>
+          </pre>
+        </div>
       );
     case "table":
       return (
-        <div key={key} className="overflow-x-auto mb-6">
+        <div key={key} className="overflow-x-auto mb-7 rounded-xl border border-white/10">
           <table className="w-full text-sm border-collapse">
             <thead>
-              <tr>
+              <tr className="bg-white/[0.04]">
                 {block.headers.map((h, i) => (
-                  <th key={i} className="text-left px-4 py-2.5 border border-white/10 text-white font-semibold bg-white/[0.04]">{h}</th>
+                  <th
+                    key={i}
+                    className="text-left px-5 py-3 text-xs font-semibold uppercase tracking-wider text-gray-400 border-b border-white/10"
+                  >
+                    {h}
+                  </th>
                 ))}
               </tr>
             </thead>
             <tbody>
               {block.rows.map((row, i) => (
-                <tr key={i}>
+                <tr
+                  key={i}
+                  className={i % 2 === 0 ? "bg-transparent" : "bg-white/[0.02]"}
+                >
                   {row.map((cell, j) => (
-                    <td key={j} className="px-4 py-2.5 border border-white/10 text-gray-300">{cell}</td>
+                    <td
+                      key={j}
+                      className={`px-5 py-3 border-b border-white/5 text-[13px] ${j === 0 ? "text-white font-medium" : "text-gray-400"}`}
+                    >
+                      {cell}
+                    </td>
                   ))}
                 </tr>
               ))}
@@ -323,7 +388,17 @@ function renderBlock(block: Block, key: number) {
         </div>
       );
     case "hr":
-      return <hr key={key} className="border-white/10 my-10" />;
+      return (
+        <div key={key} className="my-12 flex items-center gap-4">
+          <div className="flex-1 h-px bg-white/5" />
+          <div className="flex gap-1">
+            <span className="w-1.5 h-1.5 rounded-full bg-white/20" />
+            <span className="w-1.5 h-1.5 rounded-full bg-white/10" />
+            <span className="w-1.5 h-1.5 rounded-full bg-white/5" />
+          </div>
+          <div className="flex-1 h-px bg-white/5" />
+        </div>
+      );
   }
 }
 
@@ -334,47 +409,99 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
 
   return (
     <main className="min-h-screen bg-[#0D0D14]">
-      <div className={`h-1 w-full bg-gradient-to-r ${article.gradient}`} />
+      {/* Top gradient bar */}
+      <div className={`h-0.5 w-full bg-gradient-to-r ${article.gradient}`} />
 
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-16">
-        <Link
-          href="/#insights"
-          className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-gray-300 transition-colors mb-10 group"
-        >
-          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
-          Back to Insights
-        </Link>
-
-        <div className="flex flex-wrap items-center gap-3 mb-6">
-          <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border bg-white/[0.04] border-white/10 ${article.categoryColor}`}>
-            <Tag className="w-3 h-3" />
-            {article.category}
-          </span>
-          <span className="text-xs text-gray-500 flex items-center gap-1.5">
-            <Clock className="w-3 h-3" />
-            {article.readTime}
-          </span>
-          <span className="text-xs text-gray-500 flex items-center gap-1.5">
-            <Calendar className="w-3 h-3" />
-            {article.date}
-          </span>
+      {/* Sticky nav */}
+      <nav className="sticky top-0 z-40 border-b border-white/5 bg-[#0D0D14]/85 backdrop-blur-xl">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
+          <Link
+            href="/#insights"
+            className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-white transition-colors group"
+          >
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
+            Back to Insights
+          </Link>
+          <Link href="/" className="flex items-center gap-2 group">
+            <div className="w-6 h-6 rounded-md bg-gradient-to-br from-[#8B0000] to-[#DC2626] flex items-center justify-center">
+              <Zap className="w-3 h-3 text-white" />
+            </div>
+            <span className="text-sm font-bold text-white">
+              Apex<span className="text-[#DC2626]"> Circuit</span>
+            </span>
+          </Link>
         </div>
+      </nav>
 
-        <h1 className="text-3xl sm:text-4xl font-black text-white leading-tight mb-6">
-          {article.title}
-        </h1>
+      {/* Hero */}
+      <div className="relative overflow-hidden bg-[#0B0B12] border-b border-white/5">
+        <div className="absolute inset-0 dot-grid opacity-10" />
+        {/* Accent glow */}
+        <div
+          className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full blur-[120px] opacity-10 pointer-events-none"
+          style={{ background: article.accent }}
+        />
+        <div className="relative max-w-3xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+          {/* Meta row */}
+          <div className="flex flex-wrap items-center gap-3 mb-8">
+            <span
+              className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border ${article.categoryBg} ${article.categoryColor}`}
+            >
+              <Tag className="w-3 h-3" />
+              {article.category}
+            </span>
+            <span className="text-xs text-gray-500 flex items-center gap-1.5">
+              <Clock className="w-3 h-3" />
+              {article.readTime}
+            </span>
+            <span className="text-xs text-gray-500 flex items-center gap-1.5">
+              <Calendar className="w-3 h-3" />
+              {article.date}
+            </span>
+          </div>
 
-        <p className="text-lg text-gray-400 leading-relaxed mb-12 border-l-2 border-white/10 pl-5">
-          {article.excerpt}
-        </p>
+          {/* Title */}
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-[1.1] tracking-tight mb-6">
+            {article.title}
+          </h1>
 
-        <article className="space-y-0">
-          {article.blocks.map((block, i) => renderBlock(block, i))}
+          {/* Excerpt */}
+          <p
+            className="text-base sm:text-lg text-gray-400 leading-relaxed pl-4 border-l-2"
+            style={{ borderColor: article.accent }}
+          >
+            {article.excerpt}
+          </p>
+        </div>
+      </div>
+
+      {/* Article content */}
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-14">
+        <article>
+          {article.blocks.map((block, i) => renderBlock(block, i, article.accent))}
         </article>
 
-        <div className="mt-16 p-8 rounded-2xl border border-white/8 bg-white/[0.02] text-center">
+        {/* CTA */}
+        <div
+          className="mt-16 relative rounded-2xl overflow-hidden border border-white/8 p-8 sm:p-10 text-center"
+          style={{
+            background: `radial-gradient(ellipse at 50% 0%, ${article.accent}12, transparent 70%)`,
+          }}
+        >
+          <div
+            className="absolute top-0 left-0 right-0 h-px"
+            style={{ background: `linear-gradient(90deg, transparent, ${article.accent}60, transparent)` }}
+          />
+          <div
+            className="inline-flex items-center justify-center w-12 h-12 rounded-xl mb-4"
+            style={{ background: `${article.accent}18`, border: `1px solid ${article.accent}30` }}
+          >
+            <Zap className="w-5 h-5" style={{ color: article.accent }} />
+          </div>
           <h3 className="text-xl font-bold text-white mb-2">Work with Apex Circuit</h3>
-          <p className="text-gray-400 text-sm mb-6">Have a project in mind? Let&apos;s talk about what we can build together.</p>
+          <p className="text-gray-400 text-sm mb-7 max-w-sm mx-auto">
+            Have a project in mind? Let&apos;s talk about what we can build together.
+          </p>
           <Link
             href="/#contact"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-[#8B0000] to-[#A52020] text-white font-bold text-sm hover:from-[#A52020] hover:to-[#DC2626] transition-all duration-300 shadow-lg shadow-red-900/20"
