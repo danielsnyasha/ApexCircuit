@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import { Check, ArrowRight, BadgeCheck, Repeat2, Clock } from "lucide-react";
@@ -9,7 +9,7 @@ const tiers = [
     name: "Fixed Price",
     tagline: "Defined scope. Defined budget.",
     description:
-      "Best for projects with clear requirements. We agree on scope, timeline, and cost upfront — no surprises.",
+      "Best for projects with clear requirements. We agree on scope, timeline, and cost upfront, no surprises.",
     range: "Custom Quote",
     period: "scoped to your project",
     color: "from-[#1E3A8A] to-[#2563EB]",
@@ -32,7 +32,7 @@ const tiers = [
     name: "Retainer",
     tagline: "Ongoing partnership. Predictable costs.",
     description:
-      "Ideal for businesses that need a dedicated tech team on-hand every month — feature development, maintenance, and strategy included.",
+      "Ideal for businesses that need a dedicated tech team on-hand every month, feature development, maintenance, and strategy included.",
     range: "Monthly Retainer",
     period: "tailored to your capacity needs",
     color: "from-[#8B0000] to-[#DC2626]",
@@ -83,7 +83,7 @@ const faqs = [
   },
   {
     q: "What's the minimum engagement size?",
-    a: "We focus on substantive, delivery-oriented engagements. We don't take on small gigs — we're a dedicated delivery partner, not a freelance marketplace. Contact us to discuss your scope.",
+    a: "We focus on substantive, delivery-oriented engagements. We don't take on small gigs, we're a dedicated delivery partner, not a freelance marketplace. Contact us to discuss your scope.",
   },
   {
     q: "Can I switch between models?",
@@ -124,7 +124,7 @@ export default function Pricing() {
           </h2>
           <p className="text-lg dark:text-gray-400 text-gray-600 max-w-2xl mx-auto">
             Three engagement models built for how real businesses work. No hidden fees,
-            no retainer lock-in traps — just honest pricing that scales with your needs.
+            no retainer lock-in traps, just honest pricing that scales with your needs.
           </p>
         </motion.div>
 

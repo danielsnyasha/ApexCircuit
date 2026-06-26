@@ -1,4 +1,4 @@
-import { prisma } from "@/lib/prisma";
+﻿import { prisma } from "@/lib/prisma";
 import { Enquiry, AdminAllowlist, AccessDeniedLog } from "@/generated/prisma";
 import { UserButton } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
@@ -76,7 +76,7 @@ async function checkAccess(email: string): Promise<{ allowed: boolean; reason?: 
 
     return { allowed: true };
   } catch (err) {
-    console.error("[checkAccess] error — denying access:", err);
+    console.error("[checkAccess] error, denying access:", err);
     return { allowed: false, reason: "Access check failed. Contact the system administrator." };
   }
 }
@@ -136,7 +136,7 @@ export default async function AdminPage() {
   const { allowed, reason } = await checkAccess(email);
 
   if (!allowed) {
-    // Log the denied attempt (fire and forget — don't block render)
+    // Log the denied attempt (fire and forget, don't block render)
     const deniedReason = reason ?? "Not authorised";
     prisma.accessDeniedLog?.create({
       data: { email: email || "unknown", reason: deniedReason },

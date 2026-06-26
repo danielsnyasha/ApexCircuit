@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -13,7 +13,7 @@ const articles = [
     readColor: "dark:text-cyan-400 text-cyan-700",
     title: "ERPNext in 90 Days: Our Proven Implementation Framework",
     excerpt:
-      "Most ERP projects run over budget and over time. Here's the exact phased approach we use to get organisations fully live in 90 days — from requirements through go-live and adoption.",
+      "Most ERP projects run over budget and over time. Here's the exact phased approach we use to get organisations fully live in 90 days, from requirements through go-live and adoption.",
     readTime: "8 min read",
     date: "Jan 2025",
     gradient: "from-[#0891B2] to-[#06B6D4]",
@@ -52,7 +52,7 @@ const articles = [
     readColor: "dark:text-purple-400 text-purple-700",
     title: "How to Build a Business Case for AI Automation in 2025",
     excerpt:
-      "CFOs don't buy 'AI'. They buy ROI. We break down how to quantify automation value — from hours saved to error rate reduction — and present it in a language that gets sign-off.",
+      "CFOs don't buy 'AI'. They buy ROI. We break down how to quantify automation value, from hours saved to error rate reduction, and present it in a language that gets sign-off.",
     readTime: "7 min read",
     date: "Apr 2025",
     gradient: "from-[#7C3AED] to-[#A78BFA]",
@@ -63,7 +63,7 @@ const articles = [
     categoryColor: "dark:text-green-400 text-green-700",
     categoryBg: "dark:bg-green-900/20 dark:border-green-800/30 bg-green-50 border-green-200",
     readColor: "dark:text-green-400 text-green-700",
-    title: "Next.js App Router: SSR vs SSG vs ISR — When to Use Each",
+    title: "Next.js App Router: SSR vs SSG vs ISR, When to Use Each",
     excerpt:
       "The App Router changed the rendering model fundamentally. This guide cuts through the confusion and shows exactly when to reach for each strategy in production applications.",
     readTime: "10 min read",
@@ -78,7 +78,7 @@ const articles = [
     readColor: "dark:text-blue-400 text-blue-700",
     title: "Enterprise Application Security: The 12-Point Checklist",
     excerpt:
-      "From OWASP Top 10 to JWT handling, secrets management, and pen testing — the security baseline every enterprise application should meet before going to production.",
+      "From OWASP Top 10 to JWT handling, secrets management, and pen testing, the security baseline every enterprise application should meet before going to production.",
     readTime: "12 min read",
     date: "Jun 2025",
     gradient: "from-[#1E3A8A] to-[#2563EB]",
@@ -111,7 +111,7 @@ export default function Insights() {
               <span className="gradient-text">Knowledge</span>
             </h2>
             <p className="text-lg dark:text-gray-400 text-gray-600 max-w-xl">
-              Deep technical writing from practitioners. No fluff — just the hard-won
+              Deep technical writing from practitioners. No fluff, just the hard-won
               lessons from real enterprise projects.
             </p>
           </div>

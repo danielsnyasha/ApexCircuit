@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import { motion, type Variants } from "framer-motion";
@@ -111,7 +111,7 @@ export default function Navigation() {
                   {isActive && (
                     <motion.span
                       layoutId="nav-pill"
-                      className="absolute inset-0 bg-white/5 rounded-lg border border-white/10"
+                      className="absolute inset-0 dark:bg-white/5 bg-black/[0.06] rounded-lg border dark:border-white/10 border-black/10"
                       transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                     />
                   )}
@@ -125,7 +125,7 @@ export default function Navigation() {
           <div className="flex items-center gap-3">
             <ThemeToggle />
 
-            {/* Dashboard + avatar — only visible when signed in */}
+            {/* Dashboard + avatar, only visible when signed in */}
             <Show when="signed-in">
               <a
                 href="/admin"
@@ -142,7 +142,7 @@ export default function Navigation() {
               />
             </Show>
 
-            {/* Sign In — only visible when signed out */}
+            {/* Sign In, only visible when signed out */}
             <Show when="signed-out">
               <SignInButton mode="redirect">
                 <button className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-lg border dark:border-white/10 border-black/10 dark:text-gray-400 dark:hover:text-white dark:hover:border-white/20 text-gray-600 hover:text-gray-900 hover:border-black/20 text-xs font-medium transition-all duration-200">

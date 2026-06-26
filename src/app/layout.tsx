@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Nunito, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
   title: {
-    default: "Apex Circuit | Enterprise Technology Partner — UK",
+    default: "Apex Circuit | Enterprise Technology Partner, UK",
     template: "%s | Apex Circuit",
   },
   description:
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     type: "website",
     url: siteUrl,
     siteName: "Apex Circuit",
-    title: "Apex Circuit | Enterprise Technology Partner — UK",
+    title: "Apex Circuit | Enterprise Technology Partner, UK",
     description:
       "Global enterprise technology partner. Bespoke software, ERPNext, GIS, AI automation, cloud systems, DevOps & QA. 50+ projects. 8+ countries.",
     locale: "en_GB",
@@ -90,7 +90,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Apex Circuit — Enterprise Technology Partner",
+        alt: "Apex Circuit, Enterprise Technology Partner",
         type: "image/png",
       },
     ],
@@ -100,7 +100,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@apexcircuit",
     creator: "@apexcircuit",
-    title: "Apex Circuit | Enterprise Technology Partner — UK",
+    title: "Apex Circuit | Enterprise Technology Partner, UK",
     description:
       "Bespoke software, ERPNext, GIS, AI automation, cloud & DevOps. 50+ projects. 8+ countries. World-class engineering.",
     images: ["/opengraph-image"],
@@ -248,7 +248,7 @@ const professionalServiceSchema = {
       itemOffered: { "@type": "Service", name },
     })),
   },
-  areaServed: { "@type": "GeoShape", description: "Global — UK, Africa, Europe, Americas" },
+  areaServed: { "@type": "GeoShape", description: "Global, UK, Africa, Europe, Americas" },
 };
 
 const breadcrumbSchema = {
@@ -331,7 +331,7 @@ export default function RootLayout({
         {/* Preconnect to Google Fonts CDN for faster font loading */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* Canonical enforced via metadata above — also set the theme colour */}
+        {/* Canonical enforced via metadata above, also set the theme colour */}
         <meta name="theme-color" content="#0D0D14" />
         <meta name="color-scheme" content="dark light" />
       </head>

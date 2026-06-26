@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
@@ -165,7 +165,7 @@ function MemberCard({ member }: { member: TeamMember }) {
   return (
     <motion.div
       variants={cardVariants}
-      className="group glass-card rounded-2xl overflow-hidden border border-white/5 hover:border-white/10 transition-all duration-400 hover:-translate-y-2 flex flex-col"
+      className="group glass-card rounded-2xl overflow-hidden border dark:border-white/5 dark:hover:border-white/10 border-black/5 hover:border-black/10 transition-all duration-400 hover:-translate-y-2 flex flex-col"
     >
       {/* Photo / Avatar */}
       <div className="relative h-64 overflow-hidden flex-shrink-0">
@@ -184,9 +184,9 @@ function MemberCard({ member }: { member: TeamMember }) {
 
         {/* Location badge */}
         {member.location && (
-          <div className="absolute top-3 left-3 flex items-center gap-1 bg-black/50 backdrop-blur-md rounded-full px-2.5 py-1 border border-white/10">
+          <div className="absolute top-3 left-3 flex items-center gap-1 dark:bg-black/50 bg-white/85 backdrop-blur-md rounded-full px-2.5 py-1 border dark:border-white/10 border-black/10">
             <span className="text-[11px]">{member.flag}</span>
-            <span className="text-[10px] dark:text-gray-300 text-gray-700 font-medium">{member.location}</span>
+            <span className="text-[10px] dark:text-gray-200 text-gray-700 font-medium">{member.location}</span>
           </div>
         )}
 
@@ -217,9 +217,9 @@ function MemberCard({ member }: { member: TeamMember }) {
 
       {/* Content */}
       <div className="p-5 flex flex-col flex-1">
-        <h3 className="text-base font-bold text-white mb-0.5">{member.name}</h3>
+        <h3 className="text-base font-bold text-foreground mb-0.5">{member.name}</h3>
         <p className="text-xs text-[#60A5FA] font-medium mb-3">{member.role}</p>
-        <p className="text-xs text-gray-500 leading-relaxed mb-4 flex-1">{member.bio}</p>
+        <p className="text-xs dark:text-gray-500 text-gray-600 leading-relaxed mb-4 flex-1">{member.bio}</p>
         <div className="flex flex-wrap gap-1.5 mt-auto">
           {member.tags.map((tag) => (
             <span
@@ -237,7 +237,7 @@ function MemberCard({ member }: { member: TeamMember }) {
 
 export default function Team() {
   return (
-    <section className="relative py-24 sm:py-32 bg-[#0D0D14] overflow-hidden">
+    <section className="relative py-24 sm:py-32 bg-background overflow-hidden">
       <div className="absolute inset-0 dot-grid opacity-20" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/40 to-transparent" />
 
@@ -253,17 +253,17 @@ export default function Team() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#2563EB]/30 bg-[#2563EB]/10 text-sm dark:text-blue-300/80 text-blue-700 mb-6">
             Our Team
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
             The Minds Behind{" "}
             <span className="gradient-text">Apex Circuit</span>
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="text-lg dark:text-gray-400 text-gray-600 max-w-2xl mx-auto">
             A distributed team of engineers and technologists spanning the UK, Europe, and beyond,
             building enterprise-grade software with precision.
           </p>
         </motion.div>
 
-        {/* Engineers — label */}
+        {/* Engineers, label */}
         <motion.div
           initial={{ opacity: 0, x: -10 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -271,11 +271,11 @@ export default function Team() {
           transition={{ duration: 0.5 }}
           className="flex items-center gap-3 mb-6"
         >
-          <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gray-500">Engineering</span>
+          <span className="text-[11px] font-semibold uppercase tracking-[0.18em] dark:text-gray-500 text-gray-600">Engineering</span>
           <div className="flex-1 h-px dark:bg-white/5 bg-black/5" />
         </motion.div>
 
-        {/* Engineers Grid — 5 cards */}
+        {/* Engineers Grid, 5 cards */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -288,7 +288,7 @@ export default function Team() {
           ))}
         </motion.div>
 
-        {/* Other Roles — label */}
+        {/* Other Roles, label */}
         <motion.div
           initial={{ opacity: 0, x: -10 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -296,7 +296,7 @@ export default function Team() {
           transition={{ duration: 0.5 }}
           className="flex items-center gap-3 mb-6"
         >
-          <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gray-500">Consulting & Operations</span>
+          <span className="text-[11px] font-semibold uppercase tracking-[0.18em] dark:text-gray-500 text-gray-600">Consulting &amp; Operations</span>
           <div className="flex-1 h-px dark:bg-white/5 bg-black/5" />
         </motion.div>
 
@@ -321,11 +321,11 @@ export default function Team() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center"
         >
-          <div className="glass-card rounded-2xl p-8 max-w-2xl mx-auto border border-white/5">
-            <h3 className="text-xl font-bold text-white mb-2">
+          <div className="glass-card rounded-2xl p-8 max-w-2xl mx-auto border dark:border-white/5 border-black/5">
+            <h3 className="text-xl font-bold text-foreground mb-2">
               Want to join the team?
             </h3>
-            <p className="text-gray-400 text-sm mb-6">
+            <p className="dark:text-gray-400 text-gray-600 text-sm mb-6">
               We&apos;re always looking for exceptional engineers who build with care and deliver with pride.
               Remote-first, globally distributed.
             </p>

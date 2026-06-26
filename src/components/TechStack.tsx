@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 
@@ -9,7 +9,7 @@ interface TechItem {
   customIcon?: React.ReactNode;
 }
 
-// iconColor overrides the simpleicons fill color — needed for dark icons on dark bg
+// iconColor overrides the simpleicons fill color, needed for dark icons on dark bg
 const row1: TechItem[] = [
   { name: "Next.js",      slug: "nextdotjs",   iconColor: "ffffff" },
   { name: "React",        slug: "react",        iconColor: "61DAFB" },
@@ -182,7 +182,7 @@ export default function TechStack() {
         </motion.div>
       </div>
 
-      {/* Marquee rows — faded left/right edges */}
+      {/* Marquee rows, faded left/right edges */}
       <div
         className="relative z-10 flex flex-col gap-1"
         style={{

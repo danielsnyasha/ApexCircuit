@@ -171,7 +171,7 @@ export default function Testimonials() {
 
         {/* ── Testimonials ── */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#8B0000]/30 bg-[#8B0000]/10 text-sm text-red-300/80 mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#8B0000]/30 bg-[#8B0000]/10 text-sm dark:text-red-300/80 text-red-700 mb-4">
             Client Testimonials
           </div>
           <h2 className="text-3xl sm:text-4xl font-black text-foreground tracking-tight">
@@ -259,12 +259,12 @@ export default function Testimonials() {
                       </div>
                       <div>
                         <p className="text-foreground font-bold text-sm">{testimonials[active].name}</p>
-                        <p className="text-xs text-gray-400">{testimonials[active].role}</p>
-                        <p className="text-xs text-gray-600 mb-1">{testimonials[active].company}</p>
+                        <p className="text-xs dark:text-gray-400 text-gray-600">{testimonials[active].role}</p>
+                        <p className="text-xs dark:text-gray-600 text-gray-500 mb-1">{testimonials[active].company}</p>
                         <StarRow />
                       </div>
                     </div>
-                    <span className="text-[11px] font-semibold px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-400">
+                    <span className="text-[11px] font-semibold px-3 py-1 rounded-full dark:bg-white/5 dark:border-white/10 dark:text-gray-400 bg-black/5 border border-black/10 text-gray-600">
                       {testimonials[active].sector}
                     </span>
                   </div>
@@ -288,7 +288,7 @@ export default function Testimonials() {
                   key={i}
                   onClick={() => setActive(i)}
                   className={`rounded-full transition-all duration-300 ${
-                    i === active ? "w-6 h-2 bg-white" : "w-2 h-2 bg-white/20 hover:bg-white/40"
+                    i === active ? "w-6 h-2 dark:bg-white bg-gray-800" : "w-2 h-2 dark:bg-white/20 bg-black/20 dark:hover:bg-white/40 hover:bg-black/40"
                   }`}
                 />
               ))}

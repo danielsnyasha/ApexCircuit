@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -147,7 +147,7 @@ export default function Footer() {
         <div className="border-t dark:border-white/5 border-black/5 py-10">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
             <div>
-              <h4 className="text-sm font-bold text-foreground mb-1">Monthly tech insights — no spam.</h4>
+              <h4 className="text-sm font-bold text-foreground mb-1">Monthly tech insights, no spam.</h4>
               <p className="text-xs text-gray-500">Deep dives on ERP, GIS, AI automation, and enterprise engineering. One email per month.</p>
             </div>
             {subscribed ? (
@@ -185,7 +185,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t dark:border-white/5 border-black/5 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex flex-col sm:flex-row items-center gap-3 text-xs text-gray-600">
-            <span>© 2019–2026 Apex Circuit. All rights reserved.</span>
+            <span>© 2019 to 2026 Apex Circuit. All rights reserved.</span>
             <span className="hidden sm:block">·</span>
             <span>Crafted with precision. Delivered globally.</span>
           </div>

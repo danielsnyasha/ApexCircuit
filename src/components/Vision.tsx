@@ -53,10 +53,10 @@ const values = [
 ];
 
 const statsData = [
-  { value: 100, suffix: "+", label: "Projects Vision", duration: 2000 },
-  { value: 6, suffix: "+", label: "Service Lines", duration: 1200 },
-  { value: 2019, suffix: "", label: "Est.", duration: 1800 },
-  { value: 100, suffix: "%", label: "Delivery Focus", duration: 2000 },
+  { value: 100, suffix: "+", label: "Projects Delivered", duration: 2000, lightBg: "bg-red-50", lightBorder: "border-red-200", numClass: "text-red-700 dark:text-red-400", labelClass: "text-red-500 dark:text-gray-500" },
+  { value: 6, suffix: "+", label: "Service Lines", duration: 1200, lightBg: "bg-blue-50", lightBorder: "border-blue-200", numClass: "text-blue-700 dark:text-blue-400", labelClass: "text-blue-500 dark:text-gray-500" },
+  { value: 2019, suffix: "", label: "Est.", duration: 1800, lightBg: "bg-violet-50", lightBorder: "border-violet-200", numClass: "text-violet-700 dark:text-violet-400", labelClass: "text-violet-500 dark:text-gray-500" },
+  { value: 100, suffix: "%", label: "Delivery Focus", duration: 2000, lightBg: "bg-emerald-50", lightBorder: "border-emerald-200", numClass: "text-emerald-700 dark:text-emerald-400", labelClass: "text-emerald-600 dark:text-gray-500" },
 ];
 
 function AnimatedNumber({ value, suffix, duration }: { value: number; suffix: string; duration: number }) {
@@ -180,7 +180,7 @@ export default function Vision() {
               <motion.div
                 key={val.title}
                 variants={itemVariants}
-                className="glass-card rounded-2xl p-5 border border-white/5 hover:border-white/10 transition-all duration-300 group"
+                className="glass-card rounded-2xl p-5 border dark:border-white/5 dark:hover:border-white/10 border-black/5 hover:border-black/10 transition-all duration-300 group"
               >
                 <div
                   className={`w-10 h-10 rounded-xl ${val.bg} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
@@ -188,7 +188,7 @@ export default function Vision() {
                   <val.icon className="w-5 h-5" style={{ color: val.color }} />
                 </div>
                 <h4 className="text-base font-bold text-foreground mb-2">{val.title}</h4>
-                <p className="text-xs text-gray-500 leading-relaxed">{val.desc}</p>
+                <p className="text-xs dark:text-gray-500 text-gray-600 leading-relaxed">{val.desc}</p>
               </motion.div>
             ))}
 
@@ -200,7 +200,7 @@ export default function Vision() {
               <p className="text-2xl font-bold text-foreground mb-1">
                 &ldquo;Your Shortcut to Excellence&rdquo;
               </p>
-              <p className="text-sm text-gray-500">The Apex Circuit Promise</p>
+              <p className="text-sm dark:text-gray-500 text-gray-600">The Apex Circuit Promise</p>
             </motion.div>
           </motion.div>
         </div>
@@ -217,16 +217,16 @@ export default function Vision() {
             <motion.div
               key={stat.label}
               variants={itemVariants}
-              className="glass-card rounded-2xl p-6 text-center border border-white/5 hover:border-[#8B0000]/20 transition-all duration-300"
+              className={`glass-card rounded-2xl p-6 text-center border dark:border-white/5 dark:hover:border-white/10 ${stat.lightBorder} ${stat.lightBg} hover:-translate-y-1 transition-all duration-300 dark:bg-transparent`}
             >
-              <div className="text-4xl font-bold gradient-text mb-2">
+              <div className={`text-4xl font-black mb-2 ${stat.numClass}`}>
                 <AnimatedNumber
                   value={stat.value}
                   suffix={stat.suffix}
                   duration={stat.duration}
                 />
               </div>
-              <div className="text-xs text-gray-500 uppercase tracking-wider">{stat.label}</div>
+              <div className={`text-xs font-semibold uppercase tracking-wider ${stat.labelClass}`}>{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>

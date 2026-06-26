@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useRef, useCallback, type FormEvent, type DragEvent } from "react";
 import { motion, type Variants } from "framer-motion";
@@ -119,7 +119,7 @@ const MAX_SIZE = 10 * 1024 * 1024; // 10 MB
 function fileIcon(type: string) {
   if (type.startsWith("image/")) return <ImageIcon className="w-4 h-4 text-blue-400" />;
   if (type === "application/pdf") return <FileText className="w-4 h-4 text-red-400" />;
-  return <File className="w-4 h-4 text-gray-400" />;
+  return <File className="w-4 h-4 dark:text-gray-400 text-gray-500" />;
 }
 
 function formatBytes(bytes: number) {
@@ -189,7 +189,7 @@ export default function Contact() {
   };
 
   const inputClass =
-    "dark:bg-white/5 dark:border-white/10 dark:text-white dark:placeholder:text-gray-600 bg-white border-black/10 text-foreground placeholder:text-gray-400 focus:border-[#8B0000]/50 focus:ring-[#8B0000]/20 h-10 rounded-xl";
+    "dark:bg-white/5 dark:border-white/10 dark:text-white dark:placeholder:text-gray-600 bg-white border-gray-300 text-foreground placeholder:text-gray-400 focus:border-[#8B0000]/50 focus:ring-[#8B0000]/20 h-10 rounded-xl";
 
   return (
     <section className="relative py-24 sm:py-32 bg-background overflow-hidden">
@@ -244,13 +244,13 @@ export default function Contact() {
                   href={info.href}
                   target={info.href.startsWith("http") ? "_blank" : undefined}
                   rel={info.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="flex items-center gap-4 glass-card rounded-xl p-4 border dark:border-white/5 dark:hover:border-white/10 border-black/5 hover:border-black/10 transition-all duration-300 group"
+                  className="flex items-center gap-4 glass-card rounded-xl p-4 border dark:border-white/5 dark:hover:border-white/10 border-gray-200 hover:border-gray-300 dark:shadow-none shadow-sm transition-all duration-300 group"
                 >
                   <div className={`w-10 h-10 rounded-lg ${info.bg} flex items-center justify-center shrink-0`}>
                     <info.icon className="w-4 h-4" style={{ color: info.color }} />
                   </div>
                   <div>
-                    <p className="text-xs text-gray-500">{info.label}</p>
+                    <p className="text-xs dark:text-gray-500 text-gray-600">{info.label}</p>
                     <p className="text-sm text-foreground font-medium group-hover:opacity-80 transition-opacity">
                       {info.value}
                     </p>
@@ -267,7 +267,7 @@ export default function Contact() {
                 <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
                 <span className="text-sm font-medium text-foreground">Available for Projects</span>
               </div>
-              <p className="text-xs text-gray-500">
+              <p className="text-xs dark:text-gray-500 text-gray-600">
                 We respond within 24 hours. For urgent requests, reach out on LinkedIn.
               </p>
             </motion.div>
@@ -275,10 +275,10 @@ export default function Contact() {
             {/* Upload hint */}
             <motion.div
               variants={itemVariants}
-              className="rounded-xl p-4 bg-white/[0.02] border border-white/5"
+              className="rounded-xl p-4 dark:bg-white/[0.02] bg-black/[0.02] border dark:border-white/5 border-black/5"
             >
               <p className="text-xs font-semibold text-foreground mb-1.5">Share your project files</p>
-              <p className="text-xs text-gray-500 leading-relaxed">
+              <p className="text-xs dark:text-gray-500 text-gray-600 leading-relaxed">
                 Attach wireframes, briefs, spreadsheets, or reference images directly in the form.
                 Supported: PNG, JPG, PDF, Word, Excel, PowerPoint (max 10 MB each, up to 5 files).
               </p>
@@ -293,7 +293,7 @@ export default function Contact() {
             transition={{ duration: 0.7 }}
             className="lg:col-span-3"
           >
-            <div className="glass-card rounded-2xl p-6 sm:p-8 border border-white/5">
+            <div className="glass-card rounded-2xl p-6 sm:p-8 border dark:border-white/5 border-gray-200 dark:shadow-none shadow-sm">
               {status === "error" && (
                 <div className="mb-4 flex items-center gap-2 rounded-xl border border-red-800/40 bg-red-900/10 px-4 py-3 text-sm text-red-400">
                   <span>Something went wrong. Please try again or reach out on LinkedIn.</span>
@@ -472,7 +472,7 @@ export default function Contact() {
                       onChange={handleInput("description")}
                       required
                       rows={4}
-                      className="dark:bg-white/5 dark:border-white/10 dark:text-white dark:placeholder:text-gray-600 bg-white border-black/10 text-foreground placeholder:text-gray-400 focus:border-[#8B0000]/50 focus:ring-[#8B0000]/20 rounded-xl resize-none"
+                      className="dark:bg-white/5 dark:border-white/10 dark:text-white dark:placeholder:text-gray-600 bg-white border-gray-300 text-foreground placeholder:text-gray-400 focus:border-[#8B0000]/50 focus:ring-[#8B0000]/20 rounded-xl resize-none"
                     />
                   </div>
 
@@ -480,7 +480,7 @@ export default function Contact() {
                   <div className="space-y-2">
                     <Label className="text-xs dark:text-gray-400 text-gray-600">
                       Attachments
-                      <span className="ml-1 text-gray-600 font-normal">(images, PDFs, documents — up to 5 files, 10 MB each)</span>
+                      <span className="ml-1 dark:text-gray-600 text-gray-500 font-normal">(images, PDFs, documents, up to 5 files, 10 MB each)</span>
                     </Label>
 
                     {/* Drop Zone */}
@@ -492,14 +492,14 @@ export default function Contact() {
                       className={`relative flex flex-col items-center justify-center gap-2 rounded-xl border-2 border-dashed px-4 py-6 cursor-pointer transition-all duration-200 ${
                         dragging
                           ? "border-[#8B0000]/60 bg-[#8B0000]/10"
-                          : "dark:border-white/10 dark:hover:border-white/20 dark:hover:bg-white/[0.02] border-black/10 hover:border-black/20 hover:bg-black/[0.02]"
+                          : "dark:border-white/10 dark:hover:border-white/20 dark:hover:bg-white/[0.02] border-gray-300 hover:border-gray-400 hover:bg-black/[0.02]"
                       }`}
                     >
                       <Upload className={`w-7 h-7 ${dragging ? "text-red-400" : "text-gray-600"}`} />
-                      <p className="text-xs text-gray-500 text-center">
+                      <p className="text-xs dark:text-gray-500 text-gray-600 text-center">
                         <span className="text-foreground font-medium">Click to upload</span> or drag and drop
                       </p>
-                      <p className="text-[10px] text-gray-600">PNG, JPG, PDF, DOCX, XLSX, PPTX</p>
+                      <p className="text-[10px] dark:text-gray-600 text-gray-500">PNG, JPG, PDF, DOCX, XLSX, PPTX</p>
                       <input
                         ref={fileInputRef}
                         type="file"
@@ -511,7 +511,7 @@ export default function Contact() {
                     </div>
 
                     {fileError && (
-                      <p className="text-xs text-red-400">{fileError}</p>
+                      <p className="text-xs dark:text-red-400 text-red-600">{fileError}</p>
                     )}
 
                     {/* File previews */}
@@ -520,7 +520,7 @@ export default function Contact() {
                         {files.map((af, idx) => (
                           <div
                             key={idx}
-                            className="flex items-center gap-3 rounded-xl dark:bg-white/[0.03] dark:border-white/5 bg-black/[0.02] border border-black/5 px-3 py-2.5"
+                            className="flex items-center gap-3 rounded-xl dark:bg-white/[0.03] dark:border-white/5 bg-white border border-gray-200 px-3 py-2.5"
                           >
                             {af.preview ? (
                               // eslint-disable-next-line @next/next/no-img-element
@@ -530,13 +530,13 @@ export default function Contact() {
                                 className="w-10 h-10 rounded-lg object-cover flex-shrink-0"
                               />
                             ) : (
-                              <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0">
+                              <div className="w-10 h-10 rounded-lg dark:bg-white/5 bg-black/5 flex items-center justify-center flex-shrink-0">
                                 {fileIcon(af.file.type)}
                               </div>
                             )}
                             <div className="flex-1 min-w-0">
                               <p className="text-xs text-foreground font-medium truncate">{af.file.name}</p>
-                              <p className="text-[10px] text-gray-500">{formatBytes(af.file.size)}</p>
+                              <p className="text-[10px] dark:text-gray-500 text-gray-600">{formatBytes(af.file.size)}</p>
                             </div>
                             <button
                               type="button"
@@ -560,7 +560,7 @@ export default function Contact() {
                       onChange={(e) => setForm((p) => ({ ...p, newsletter: e.target.checked }))}
                       className="mt-0.5 w-4 h-4 rounded border-white/20 bg-white/5 accent-[#8B0000] cursor-pointer"
                     />
-                    <label htmlFor="newsletter" className="text-xs text-gray-500 cursor-pointer leading-relaxed">
+                    <label htmlFor="newsletter" className="text-xs dark:text-gray-500 text-gray-600 cursor-pointer leading-relaxed">
                       Keep me updated on Apex Circuit news, technology insights, and project spotlights.
                     </label>
                   </div>

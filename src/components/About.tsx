@@ -341,7 +341,7 @@ export default function About() {
             ].map((s) => (
               <div key={s.label} className="glass-card rounded-xl p-4 text-center">
                 <div className="text-2xl font-bold gradient-text">{s.value}</div>
-                <div className="text-xs text-gray-500 mt-1">{s.label}</div>
+                <div className="text-xs dark:text-gray-500 text-gray-600 mt-1">{s.label}</div>
               </div>
             ))}
           </div>
@@ -419,9 +419,9 @@ export default function About() {
 
                 {/* Badges */}
                 <div className="absolute top-4 right-4 z-10 flex flex-col gap-2 items-end">
-                  <div className="flex items-center gap-1.5 bg-black/50 backdrop-blur-md rounded-lg px-3 py-1.5 border border-white/10">
+                  <div className="flex items-center gap-1.5 dark:bg-black/50 bg-white/85 backdrop-blur-md rounded-lg px-3 py-1.5 border dark:border-white/10 border-black/10">
                     <span className="text-base">{member.flag}</span>
-                    <span className="text-[11px] text-white font-medium whitespace-nowrap">{member.location}</span>
+                    <span className="text-[11px] dark:text-white text-gray-800 font-medium whitespace-nowrap">{member.location}</span>
                   </div>
                 </div>
 
@@ -470,7 +470,7 @@ export default function About() {
                 {member.metrics.map((m) => (
                   <div key={m.label} className="glass-card rounded-xl p-3 text-center border border-white/5">
                     <div className="text-lg font-bold gradient-text">{m.value}</div>
-                    <div className="text-[10px] text-gray-500 mt-0.5">{m.label}</div>
+                    <div className="text-[10px] dark:text-gray-500 text-gray-600 mt-0.5">{m.label}</div>
                   </div>
                 ))}
               </div>
@@ -494,7 +494,7 @@ export default function About() {
                 </div>
                 <h3 className="text-2xl font-bold text-foreground mb-1">{member.name}</h3>
                 <p className="text-[#60A5FA] font-medium text-base mb-2">{member.role}</p>
-                <div className="flex flex-wrap items-center gap-3 text-xs text-gray-500 mb-4">
+                <div className="flex flex-wrap items-center gap-3 text-xs dark:text-gray-500 text-gray-600 mb-4">
                   <span className="flex items-center gap-1"><MapPin className="w-3 h-3" /> {member.location}</span>
                   {member.experience && (
                     <>
@@ -509,7 +509,7 @@ export default function About() {
               {/* Experience */}
               {member.experience && (
                 <motion.div variants={itemVariants}>
-                  <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Professional Experience</h4>
+                  <h4 className="text-xs font-semibold dark:text-gray-500 text-gray-600 uppercase tracking-wider mb-3">Professional Experience</h4>
                   <div className="space-y-2">
                     {member.experience.map((exp) => (
                       <div key={exp.company} className={`flex items-start gap-3 rounded-xl p-3 dark:bg-white/[0.02] bg-black/[0.02] border ${exp.border}`}>
@@ -517,9 +517,9 @@ export default function About() {
                         <div className="flex-1 min-w-0">
                           <div className="flex flex-wrap items-baseline justify-between gap-x-2">
                             <p className="text-sm font-semibold text-foreground">{exp.role}</p>
-                            <span className="text-[10px] text-gray-600 shrink-0">{exp.period}</span>
+                            <span className="text-[10px] dark:text-gray-600 text-gray-500 shrink-0">{exp.period}</span>
                           </div>
-                          <p className="text-[11px] text-gray-500 mt-0.5">{exp.company}</p>
+                          <p className="text-[11px] dark:text-gray-500 text-gray-600 mt-0.5">{exp.company}</p>
                         </div>
                       </div>
                     ))}
@@ -530,14 +530,14 @@ export default function About() {
               {/* Education & Certs */}
               {member.education && (
                 <motion.div variants={itemVariants}>
-                  <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Education &amp; Certifications</h4>
+                  <h4 className="text-xs font-semibold dark:text-gray-500 text-gray-600 uppercase tracking-wider mb-3">Education &amp; Certifications</h4>
                   <div className="grid gap-2">
                     {member.education.map((edu) => (
                       <div key={edu.title} className={`flex items-start gap-3 rounded-xl p-3 ${edu.bg} border ${edu.border}`}>
                         <edu.icon className={`w-4 h-4 mt-0.5 shrink-0 ${edu.color}`} />
                         <div>
                           <p className="text-xs font-semibold text-foreground leading-snug">{edu.title}</p>
-                          <p className="text-[10px] text-gray-500 mt-0.5">{edu.institution}</p>
+                          <p className="text-[10px] dark:text-gray-500 text-gray-600 mt-0.5">{edu.institution}</p>
                         </div>
                       </div>
                     ))}
@@ -548,10 +548,10 @@ export default function About() {
               {/* Skills */}
               {member.skills && (
                 <motion.div variants={itemVariants}>
-                  <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Technical Stack</h4>
+                  <h4 className="text-xs font-semibold dark:text-gray-500 text-gray-600 uppercase tracking-wider mb-3">Technical Stack</h4>
                   <div className="flex flex-wrap gap-1.5">
                     {member.skills.map((skill) => (
-                      <span key={skill} className="px-2.5 py-1 rounded-full text-[11px] font-medium dark:bg-white/5 dark:border-white/10 dark:dark:text-gray-300 text-gray-700 bg-black/5 border border-black/10 text-gray-700 hover:border-[#8B0000]/40 dark:hover:text-white hover:text-gray-900 transition-colors duration-200">
+                      <span key={skill} className="px-2.5 py-1 rounded-full text-[11px] font-medium dark:bg-white/5 dark:border-white/10 dark:text-gray-300 text-gray-700 bg-black/5 border border-black/10 hover:border-[#8B0000]/40 dark:hover:text-white hover:text-gray-900 transition-colors duration-200">
                         {skill}
                       </span>
                     ))}
@@ -571,14 +571,14 @@ export default function About() {
                 )}
                 {member.github && (
                   <a href={member.github} target="_blank" rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 dark:text-gray-300 text-gray-700 text-sm font-medium hover:bg-white/10 hover:text-white transition-all duration-300">
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl dark:bg-white/5 dark:border-white/10 dark:text-gray-300 bg-black/5 border border-black/10 text-gray-700 text-sm font-medium dark:hover:bg-white/10 dark:hover:text-white hover:bg-black/10 hover:text-gray-900 transition-all duration-300">
                     <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" /></svg>
                     GitHub
                     <ExternalLink className="w-3 h-3" />
                   </a>
                 )}
                 {member.openTo && (
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl dark:bg-white/[0.03] dark:border-white/5 bg-black/[0.03] border border-black/5 text-gray-500 text-sm">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl dark:bg-white/[0.03] dark:border-white/5 bg-black/[0.03] border border-black/5 dark:text-gray-500 text-gray-600 text-sm">
                     <TrendingUp className="w-4 h-4 text-green-400" />
                     <span className="text-xs">{member.openTo}</span>
                   </div>

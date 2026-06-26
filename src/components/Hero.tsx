@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -55,7 +55,7 @@ export default function Hero() {
       {/* Background grid */}
       <div className="absolute inset-0 grid-bg opacity-25 pointer-events-none" />
 
-      {/* Gradient orbs — fewer, more intentional */}
+      {/* Gradient orbs, fewer, more intentional */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-[#8B0000]/6 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-[#1E3A8A]/8 blur-[120px] pointer-events-none" />
 
@@ -139,7 +139,7 @@ export default function Hero() {
                 </button>
               </motion.div>
 
-              {/* Stats — inline, no cards */}
+              {/* Stats, inline, no cards */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -242,7 +242,7 @@ export default function Hero() {
                   className="absolute -top-5 -right-5 glass-card rounded-xl px-3.5 py-2.5 border border-[#8B0000]/25 shadow-xl shadow-red-900/10"
                 >
                   <div className="text-base font-black text-white leading-none">MSc</div>
-                  <div className="text-[9px] text-gray-400 uppercase tracking-wider mt-0.5">Distinction · UEL</div>
+                  <div className="text-[9px] dark:text-gray-400 text-gray-500 uppercase tracking-wider mt-0.5">Distinction · UEL</div>
                 </motion.div>
 
                 <motion.div
@@ -251,7 +251,7 @@ export default function Hero() {
                   className="absolute -bottom-5 -left-5 glass-card rounded-xl px-3.5 py-2.5 border border-[#2563EB]/25 shadow-xl shadow-blue-900/10"
                 >
                   <div className="text-base font-black text-white leading-none">ERPNext</div>
-                  <div className="text-[9px] text-gray-400 uppercase tracking-wider mt-0.5">Certified Partner</div>
+                  <div className="text-[9px] dark:text-gray-400 text-gray-500 uppercase tracking-wider mt-0.5">Certified Partner</div>
                 </motion.div>
               </div>
             </motion.div>

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
@@ -405,7 +405,7 @@ const services = [
     icon: TrendingUp,
     title: "Business Analysis",
     description:
-      "Structured requirements gathering, process mapping, and gap analysis that bridges the gap between business stakeholders and engineering teams. We ensure the right thing is built — not just the thing that was asked for.",
+      "Structured requirements gathering, process mapping, and gap analysis that bridges the gap between business stakeholders and engineering teams. We ensure the right thing is built, not just the thing that was asked for.",
     color: "#EC4899",
     bg: "from-[#EC4899]/20 to-[#EC4899]/5",
     border: "border-[#EC4899]/20 hover:border-[#EC4899]/50",
@@ -422,7 +422,7 @@ const services = [
     icon: ShieldCheck,
     title: "Quality Assurance",
     description:
-      "Comprehensive test strategy, automated test frameworks, security reviews, and performance benchmarking. We embed quality from day one — not as a phase at the end — so systems ship with confidence.",
+      "Comprehensive test strategy, automated test frameworks, security reviews, and performance benchmarking. We embed quality from day one, not as a phase at the end, so systems ship with confidence.",
     color: "#10B981",
     bg: "from-[#10B981]/20 to-[#10B981]/5",
     border: "border-[#10B981]/20 hover:border-[#10B981]/50",
@@ -485,7 +485,7 @@ export default function Services() {
             <span className="gradient-text-blue">Endless possibilities.</span>
           </h2>
           <p className="dark:text-gray-400 text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
-            From enterprise software to cloud infrastructure, GIS, and AI automation — we cover the full
+            From enterprise software to cloud infrastructure, GIS, and AI automation, we cover the full
             spectrum of modern technology needs.
           </p>
           {/* Stats row */}
@@ -495,9 +495,9 @@ export default function Services() {
               { value: "8+", label: "Projects Delivered" },
               { value: "100%", label: "Delivery Focus" },
             ].map((s) => (
-              <div key={s.label} className="glass-card rounded-xl p-4 text-center border border-white/5">
+              <div key={s.label} className="glass-card rounded-xl p-4 text-center border dark:border-white/5 border-black/5">
                 <div className="text-2xl font-bold gradient-text">{s.value}</div>
-                <div className="text-xs text-gray-500 mt-1">{s.label}</div>
+                <div className="text-xs dark:text-gray-500 text-gray-600 mt-1">{s.label}</div>
               </div>
             ))}
           </div>
@@ -701,7 +701,7 @@ export default function Services() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-16 flex flex-col sm:flex-row items-center justify-between gap-6 pt-10 border-t dark:border-white/5 border-black/5"
         >
-          <p className="text-gray-500 text-sm">
+          <p className="dark:text-gray-500 text-gray-600 text-sm">
             Don&apos;t see exactly what you need? Let&apos;s talk.
           </p>
           <button

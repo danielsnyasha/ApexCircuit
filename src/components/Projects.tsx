@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
@@ -51,7 +51,7 @@ const projects: Project[] = [
   {
     id: "01",
     name: "Enterprise Field Force Platform",
-    period: "2025 – Present",
+    period: "2025 to Present",
     category: "Enterprise Mobile",
     icon: Smartphone,
     image: "/close-up-shot-man-using-tablet-data-center-ensuring-rigs-are-functioning.jpg",
@@ -67,10 +67,10 @@ const projects: Project[] = [
     ],
     gradient: "from-[#8B0000] to-[#DC2626]",
     glow: "shadow-red-900/30",
-    border: "border-red-800/30",
+    border: "border-red-300 dark:border-red-800/30",
     accent: "dark:text-red-400 text-red-600",
     caseStudy: {
-      challenge: "A large enterprise needed to replace fragmented legacy mobile tools used by 500+ field agents across five regions — tools that couldn't work offline, had no centralised auth, and produced unreliable data due to sync failures.",
+      challenge: "A large enterprise needed to replace fragmented legacy mobile tools used by 500+ field agents across five regions, tools that couldn't work offline, had no centralised auth, and produced unreliable data due to sync failures.",
       approach: "We architected an offline-first React Native platform with 7 tightly integrated modules. Redux Toolkit managed shared state, a custom sync engine handled conflict resolution, and biometric authentication replaced vulnerable password flows. Jest + Playwright test suites were introduced from sprint one.",
       outcome: "82.9% end-to-end test coverage. 60% reduction in bug resolution time. 78% of legacy functionality modernised within the engagement. The platform is now the primary operational tool for the entire field workforce.",
     },
@@ -78,7 +78,7 @@ const projects: Project[] = [
   {
     id: "02",
     name: "Digital Tipping & Payments Platform",
-    period: "2025 – Present",
+    period: "2025 to Present",
     category: "FinTech SaaS",
     icon: Zap,
     image: "/desola-lanre-ologun-kwzWjTnDPLk-unsplash.jpg",
@@ -94,10 +94,10 @@ const projects: Project[] = [
     ],
     gradient: "from-[#1E3A8A] to-[#2563EB]",
     glow: "shadow-blue-900/30",
-    border: "border-blue-800/30",
+    border: "border-blue-300 dark:border-blue-800/30",
     accent: "dark:text-blue-400 text-blue-600",
     caseStudy: {
-      challenge: "A hospitality-sector client needed a modern digital tipping ecosystem to replace cash gratuities — covering consumer mobile payments, a worker-facing app, and a business operations dashboard — all talking to a single payment backend.",
+      challenge: "A hospitality-sector client needed a modern digital tipping ecosystem to replace cash gratuities, covering consumer mobile payments, a worker-facing app, and a business operations dashboard, all talking to a single payment backend.",
       approach: "We built three integrated portals from a shared API layer: a React 18 consumer app, an operator dashboard with real-time analytics, and a worker portal for payout tracking. Payment webhook handling with idempotency keys ensured zero duplicate payouts. 80+ RESTful endpoints were designed contract-first.",
       outcome: "500+ active users within 90 days. 80% reduction in payout processing time. Sub-200ms API response times under production load. Three portals shipped within a single 14-week engagement.",
     },
@@ -105,7 +105,7 @@ const projects: Project[] = [
   {
     id: "03",
     name: "Luxury Retail E-commerce Platform",
-    period: "2020 – 2021",
+    period: "2020 to 2021",
     category: "E-commerce",
     icon: ShoppingBag,
     image: "/compagnons-Fa9b57hffnM-unsplash.jpg",
@@ -121,10 +121,10 @@ const projects: Project[] = [
     ],
     gradient: "from-[#059669] to-[#10B981]",
     glow: "shadow-green-900/30",
-    border: "border-green-800/30",
+    border: "border-green-300 dark:border-green-800/30",
     accent: "dark:text-green-400 text-green-600",
     caseStudy: {
-      challenge: "A London luxury retail group had an outdated e-commerce platform unable to sustain peak traffic, with poor SEO and no personalisation capabilities — costing measurable revenue during high-demand periods.",
+      challenge: "A London luxury retail group had an outdated e-commerce platform unable to sustain peak traffic, with poor SEO and no personalisation capabilities, costing measurable revenue during high-demand periods.",
       approach: "We rebuilt the platform on Next.js with SSR and SSG, redesigned the product catalogue with schema-based SEO, implemented Redis caching for high-traffic product pages, and integrated multi-gateway checkout. Containerised with Docker for consistent deployments.",
       outcome: "99.9% uptime during peak trading. Thousands of daily transactions without degradation. Significant SEO improvement through structured data implementation. Whole platform rebuilt and relaunched within 18 weeks.",
     },
@@ -132,7 +132,7 @@ const projects: Project[] = [
   {
     id: "04",
     name: "Industrial IoT Asset Management",
-    period: "2023 – Present",
+    period: "2023 to Present",
     category: "IoT & GIS",
     icon: MapPin,
     image: "/futuristic-technology-concept.jpg",
@@ -148,18 +148,18 @@ const projects: Project[] = [
     ],
     gradient: "from-[#D97706] to-[#F59E0B]",
     glow: "shadow-yellow-900/30",
-    border: "border-yellow-800/30",
+    border: "border-yellow-300 dark:border-yellow-800/30",
     accent: "dark:text-yellow-400 text-yellow-600",
     caseStudy: {
       challenge: "A large manufacturing facility was managing critical equipment with no real-time visibility, relying on spreadsheets and manual walkarounds. Unplanned downtime was causing significant production losses.",
       approach: "We built a real-time operational dashboard ingesting live IoT sensor feeds via WebSockets, overlaid on a geospatial map of the facility. Predictive maintenance ML models analysed vibration and temperature anomalies. Deployed on AWS with Lambda for serverless sensor event processing.",
-      outcome: "45% reduction in dashboard load time. Real-time visibility across all monitored assets. Predictive alerts now surface failures 48–72 hours before they occur. AWS infrastructure costs optimised by 30% through right-sizing.",
+      outcome: "45% reduction in dashboard load time. Real-time visibility across all monitored assets. Predictive alerts now surface failures 48 to 72 hours before they occur. AWS infrastructure costs optimised by 30% through right-sizing.",
     },
   },
   {
     id: "05",
     name: "AI Auto Quoting & Estimation System",
-    period: "2024 – 2025",
+    period: "2024 to 2025",
     category: "AI & Automation",
     icon: Cpu,
     image: "/digital-art-ai-technology-background.jpg",
@@ -175,7 +175,7 @@ const projects: Project[] = [
     ],
     gradient: "from-[#7C3AED] to-[#A78BFA]",
     glow: "shadow-purple-900/30",
-    border: "border-purple-800/30",
+    border: "border-purple-300 dark:border-purple-800/30",
     accent: "dark:text-purple-400 text-purple-700",
     caseStudy: {
       challenge: "An industrial fabrication business was losing 20-25% of material per job due to inefficient manual nesting, and sales cycles stretched to 5+ days because quotes were produced by hand by a single estimator.",
@@ -186,7 +186,7 @@ const projects: Project[] = [
   {
     id: "06",
     name: "ERP Business Management Platform",
-    period: "2022 – 2023",
+    period: "2022 to 2023",
     category: "ERP & Operations",
     icon: BarChart3,
     image: "/geralt-project-management-7140607_1920.jpg",
@@ -202,10 +202,10 @@ const projects: Project[] = [
     ],
     gradient: "from-[#0891B2] to-[#06B6D4]",
     glow: "shadow-cyan-900/30",
-    border: "border-cyan-800/30",
+    border: "border-cyan-300 dark:border-cyan-800/30",
     accent: "dark:text-cyan-400 text-cyan-700",
     caseStudy: {
-      challenge: "A mid-size manufacturing and distribution business was running operations across 7 disconnected systems — separate tools for accounts, procurement, inventory, HR, and payroll with no integration and significant manual reconciliation overhead.",
+      challenge: "A mid-size manufacturing and distribution business was running operations across 7 disconnected systems, separate tools for accounts, procurement, inventory, HR, and payroll with no integration and significant manual reconciliation overhead.",
       approach: "We led a full ERPNext implementation: configuring all core modules, building custom Frappe doctypes for industry-specific workflows, developing automated bank reconciliation via banking API integration, and creating a real-time KPI dashboard for management. User training was embedded into every sprint.",
       outcome: "Full adoption by the entire organisation within 6 weeks of go-live. 7 ERP modules live and integrated. Manual reconciliation effort eliminated. Management now has a real-time view of operations across every department.",
     },
@@ -213,7 +213,7 @@ const projects: Project[] = [
   {
     id: "07",
     name: "Property & Real Estate Portal",
-    period: "2023 – 2024",
+    period: "2023 to 2024",
     category: "PropTech",
     icon: Globe,
     image: "/wireframe-terrain.jpg",
@@ -229,10 +229,10 @@ const projects: Project[] = [
     ],
     gradient: "from-[#DB2777] to-[#EC4899]",
     glow: "shadow-pink-900/30",
-    border: "border-pink-800/30",
+    border: "border-pink-300 dark:border-pink-800/30",
     accent: "dark:text-pink-400 text-pink-700",
     caseStudy: {
-      challenge: "A property group's existing listing website had no map-based search, poor mobile performance, and no way for agents to manage their own listings — causing them to lose leads to competitors with better digital experiences.",
+      challenge: "A property group's existing listing website had no map-based search, poor mobile performance, and no way for agents to manage their own listings, causing them to lose leads to competitors with better digital experiences.",
       approach: "We rebuilt the portal from scratch with Next.js, Mapbox GL JS for boundary-based map search, and PostGIS spatial queries for school catchment and proximity filtering. Separate authenticated dashboards were built for buyers, agents, and admins. JSON-LD structured data was implemented throughout for SEO.",
       outcome: "Sub-1s Largest Contentful Paint on mobile. Three fully functional user dashboards launched simultaneously. Significant increase in inbound leads from organic search within 60 days. Agents now self-manage all listings without admin intervention.",
     },
@@ -240,7 +240,7 @@ const projects: Project[] = [
   {
     id: "08",
     name: "Logistics & Fleet Management System",
-    period: "2021 – 2022",
+    period: "2021 to 2022",
     category: "Logistics & Tracking",
     icon: Truck,
     image: "/close-up-data-center-computer-scientist-using-tablet-deploying-servers-network-hardware-it.jpg",
@@ -256,10 +256,10 @@ const projects: Project[] = [
     ],
     gradient: "from-[#374151] to-[#6B7280]",
     glow: "shadow-gray-900/30",
-    border: "border-gray-700/30",
+    border: "border-gray-300 dark:border-gray-700/30",
     accent: "dark:text-gray-400 text-gray-600",
     caseStudy: {
-      challenge: "A regional logistics operator managing 120+ vehicles had no digital visibility into fleet location, driver status, or route efficiency — relying entirely on phone calls and paper-based job cards to manage daily operations.",
+      challenge: "A regional logistics operator managing 120+ vehicles had no digital visibility into fleet location, driver status, or route efficiency, relying entirely on phone calls and paper-based job cards to manage daily operations.",
       approach: "We built a real-time fleet management platform with live GPS tracking on an interactive Mapbox dashboard, automated route optimisation using PostGIS spatial algorithms, and a React Native driver app for job assignment and proof of delivery. REST API integration connected the platform to the existing warehouse management system.",
       outcome: "120+ vehicles tracked in real-time from a single dashboard. 35% improvement in on-time delivery rates. Paper job cards fully replaced by digital workflows. Fuel consumption reporting automated, saving significant management overhead monthly.",
     },
@@ -508,7 +508,7 @@ export default function Projects() {
                   onClick={() => setActive(i)}
                   className={`group flex items-center gap-3 px-4 py-3 rounded-xl text-left transition-all duration-300 shrink-0 lg:shrink border ${
                     isActive
-                      ? `dark:bg-white/[0.06] bg-white shadow-md ${p.border}`
+                      ? `dark:bg-white/[0.06] bg-white shadow-md ring-1 ring-inset ${p.border}`
                       : "border-transparent dark:hover:bg-white/[0.03] dark:hover:border-white/5 hover:bg-white/80 hover:border-black/5"
                   }`}
                 >
@@ -556,7 +556,7 @@ export default function Projects() {
                   className="object-cover object-center scale-105"
                   priority
                 />
-                {/* Gradient overlay — blends into card below */}
+                {/* Gradient overlay, blends into card below */}
                 <div className="absolute inset-0 bg-gradient-to-t dark:from-[#13131E] dark:via-[#13131E]/40 from-white/80 via-white/20 to-transparent" />
                 {/* Gradient tint from project colour */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-10`} />
