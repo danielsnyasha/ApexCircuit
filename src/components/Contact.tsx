@@ -41,7 +41,7 @@ const contactInfo = [
     value: "hello@apexcircuit.co.zw",
     href: "mailto:hello@apexcircuit.co.zw",
     color: "#8B0000",
-    bg: "bg-red-900/20",
+    bg: "dark:bg-red-900/20 bg-red-50",
   },
   {
     icon: MapPin,
@@ -49,7 +49,7 @@ const contactInfo = [
     value: "Johannesburg Metro",
     href: "#",
     color: "#2563EB",
-    bg: "bg-blue-900/20",
+    bg: "dark:bg-blue-900/20 bg-blue-50",
   },
   {
     icon: MapPin,
@@ -57,7 +57,7 @@ const contactInfo = [
     value: "Greater London",
     href: "#",
     color: "#60A5FA",
-    bg: "bg-blue-900/10",
+    bg: "dark:bg-blue-900/10 bg-blue-50/50",
   },
   {
     icon: ExternalLink,
@@ -65,7 +65,7 @@ const contactInfo = [
     value: "Connect with us",
     href: "https://www.linkedin.com/in/nyasha-musanhu-aa164794/",
     color: "#0A66C2",
-    bg: "bg-blue-900/20",
+    bg: "dark:bg-blue-900/20 bg-blue-50",
   },
 ];
 
@@ -207,7 +207,7 @@ export default function Contact() {
           transition={{ duration: 0.7 }}
           className="text-center mb-14"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#8B0000]/30 bg-[#8B0000]/10 text-sm text-red-300/80 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#8B0000]/30 bg-[#8B0000]/10 text-sm dark:text-red-300/80 text-red-700 mb-6">
             Let&apos;s Build Together
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">

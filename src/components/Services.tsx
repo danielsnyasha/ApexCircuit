@@ -477,7 +477,7 @@ export default function Services() {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#2563EB]/30 bg-[#2563EB]/10 text-sm text-blue-300/80 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#2563EB]/30 bg-[#2563EB]/10 text-sm dark:text-blue-300/80 text-blue-700 mb-6">
             What We Build
           </div>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-foreground leading-tight tracking-tight mb-5">

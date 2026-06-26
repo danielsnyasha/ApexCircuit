@@ -71,7 +71,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#8B0000]/40 bg-[#8B0000]/10 text-[11px] text-red-300/90 mb-10 uppercase tracking-[0.18em] font-semibold"
+                className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#8B0000]/40 bg-[#8B0000]/10 text-[11px] dark:text-red-300/90 text-red-700 mb-10 uppercase tracking-[0.18em] font-semibold"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse flex-shrink-0" />
                 Global Enterprise Technology Partner

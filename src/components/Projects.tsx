@@ -68,7 +68,7 @@ const projects: Project[] = [
     gradient: "from-[#8B0000] to-[#DC2626]",
     glow: "shadow-red-900/30",
     border: "border-red-800/30",
-    accent: "text-red-400",
+    accent: "dark:text-red-400 text-red-600",
     caseStudy: {
       challenge: "A large enterprise needed to replace fragmented legacy mobile tools used by 500+ field agents across five regions — tools that couldn't work offline, had no centralised auth, and produced unreliable data due to sync failures.",
       approach: "We architected an offline-first React Native platform with 7 tightly integrated modules. Redux Toolkit managed shared state, a custom sync engine handled conflict resolution, and biometric authentication replaced vulnerable password flows. Jest + Playwright test suites were introduced from sprint one.",
@@ -95,7 +95,7 @@ const projects: Project[] = [
     gradient: "from-[#1E3A8A] to-[#2563EB]",
     glow: "shadow-blue-900/30",
     border: "border-blue-800/30",
-    accent: "text-blue-400",
+    accent: "dark:text-blue-400 text-blue-600",
     caseStudy: {
       challenge: "A hospitality-sector client needed a modern digital tipping ecosystem to replace cash gratuities — covering consumer mobile payments, a worker-facing app, and a business operations dashboard — all talking to a single payment backend.",
       approach: "We built three integrated portals from a shared API layer: a React 18 consumer app, an operator dashboard with real-time analytics, and a worker portal for payout tracking. Payment webhook handling with idempotency keys ensured zero duplicate payouts. 80+ RESTful endpoints were designed contract-first.",
@@ -122,7 +122,7 @@ const projects: Project[] = [
     gradient: "from-[#059669] to-[#10B981]",
     glow: "shadow-green-900/30",
     border: "border-green-800/30",
-    accent: "text-green-400",
+    accent: "dark:text-green-400 text-green-600",
     caseStudy: {
       challenge: "A London luxury retail group had an outdated e-commerce platform unable to sustain peak traffic, with poor SEO and no personalisation capabilities — costing measurable revenue during high-demand periods.",
       approach: "We rebuilt the platform on Next.js with SSR and SSG, redesigned the product catalogue with schema-based SEO, implemented Redis caching for high-traffic product pages, and integrated multi-gateway checkout. Containerised with Docker for consistent deployments.",
@@ -149,7 +149,7 @@ const projects: Project[] = [
     gradient: "from-[#D97706] to-[#F59E0B]",
     glow: "shadow-yellow-900/30",
     border: "border-yellow-800/30",
-    accent: "text-yellow-400",
+    accent: "dark:text-yellow-400 text-yellow-600",
     caseStudy: {
       challenge: "A large manufacturing facility was managing critical equipment with no real-time visibility, relying on spreadsheets and manual walkarounds. Unplanned downtime was causing significant production losses.",
       approach: "We built a real-time operational dashboard ingesting live IoT sensor feeds via WebSockets, overlaid on a geospatial map of the facility. Predictive maintenance ML models analysed vibration and temperature anomalies. Deployed on AWS with Lambda for serverless sensor event processing.",
@@ -176,7 +176,7 @@ const projects: Project[] = [
     gradient: "from-[#7C3AED] to-[#A78BFA]",
     glow: "shadow-purple-900/30",
     border: "border-purple-800/30",
-    accent: "text-purple-400",
+    accent: "dark:text-purple-400 text-purple-700",
     caseStudy: {
       challenge: "An industrial fabrication business was losing 20-25% of material per job due to inefficient manual nesting, and sales cycles stretched to 5+ days because quotes were produced by hand by a single estimator.",
       approach: "We developed an ML nesting engine in Python/FastAPI that analyses job parameters and computes optimal cutting layouts automatically. The Next.js front-end integrates the engine in real-time, generates high-fidelity PDF quotes on-demand, and dispatches them via automated transactional email. Cloudinary handles all asset management at scale.",
@@ -203,7 +203,7 @@ const projects: Project[] = [
     gradient: "from-[#0891B2] to-[#06B6D4]",
     glow: "shadow-cyan-900/30",
     border: "border-cyan-800/30",
-    accent: "text-cyan-400",
+    accent: "dark:text-cyan-400 text-cyan-700",
     caseStudy: {
       challenge: "A mid-size manufacturing and distribution business was running operations across 7 disconnected systems — separate tools for accounts, procurement, inventory, HR, and payroll with no integration and significant manual reconciliation overhead.",
       approach: "We led a full ERPNext implementation: configuring all core modules, building custom Frappe doctypes for industry-specific workflows, developing automated bank reconciliation via banking API integration, and creating a real-time KPI dashboard for management. User training was embedded into every sprint.",
@@ -230,7 +230,7 @@ const projects: Project[] = [
     gradient: "from-[#DB2777] to-[#EC4899]",
     glow: "shadow-pink-900/30",
     border: "border-pink-800/30",
-    accent: "text-pink-400",
+    accent: "dark:text-pink-400 text-pink-700",
     caseStudy: {
       challenge: "A property group's existing listing website had no map-based search, poor mobile performance, and no way for agents to manage their own listings — causing them to lose leads to competitors with better digital experiences.",
       approach: "We rebuilt the portal from scratch with Next.js, Mapbox GL JS for boundary-based map search, and PostGIS spatial queries for school catchment and proximity filtering. Separate authenticated dashboards were built for buyers, agents, and admins. JSON-LD structured data was implemented throughout for SEO.",
@@ -257,7 +257,7 @@ const projects: Project[] = [
     gradient: "from-[#374151] to-[#6B7280]",
     glow: "shadow-gray-900/30",
     border: "border-gray-700/30",
-    accent: "text-gray-400",
+    accent: "dark:text-gray-400 text-gray-600",
     caseStudy: {
       challenge: "A regional logistics operator managing 120+ vehicles had no digital visibility into fleet location, driver status, or route efficiency — relying entirely on phone calls and paper-based job cards to manage daily operations.",
       approach: "We built a real-time fleet management platform with live GPS tracking on an interactive Mapbox dashboard, automated route optimisation using PostGIS spatial algorithms, and a React Native driver app for job assignment and proof of delivery. REST API integration connected the platform to the existing warehouse management system.",
@@ -329,8 +329,8 @@ function CaseStudyDrawer({ project, onClose }: { project: Project; onClose: () =
           {/* Challenge */}
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <div className="w-7 h-7 rounded-lg bg-red-900/20 flex items-center justify-center">
-                <Target className="w-3.5 h-3.5 text-red-400" />
+              <div className="w-7 h-7 rounded-lg dark:bg-red-900/20 bg-red-50 flex items-center justify-center">
+                <Target className="w-3.5 h-3.5 dark:text-red-400 text-red-600" />
               </div>
               <h4 className="text-sm font-bold text-foreground">The Challenge</h4>
             </div>
@@ -340,8 +340,8 @@ function CaseStudyDrawer({ project, onClose }: { project: Project; onClose: () =
           {/* Approach */}
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <div className="w-7 h-7 rounded-lg bg-blue-900/20 flex items-center justify-center">
-                <Lightbulb className="w-3.5 h-3.5 text-blue-400" />
+              <div className="w-7 h-7 rounded-lg dark:bg-blue-900/20 bg-blue-50 flex items-center justify-center">
+                <Lightbulb className="w-3.5 h-3.5 dark:text-blue-400 text-blue-600" />
               </div>
               <h4 className="text-sm font-bold text-foreground">Our Approach</h4>
             </div>
@@ -351,8 +351,8 @@ function CaseStudyDrawer({ project, onClose }: { project: Project; onClose: () =
           {/* Outcome */}
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <div className="w-7 h-7 rounded-lg bg-green-900/20 flex items-center justify-center">
-                <TrendingUp className="w-3.5 h-3.5 text-green-400" />
+              <div className="w-7 h-7 rounded-lg dark:bg-green-900/20 bg-green-50 flex items-center justify-center">
+                <TrendingUp className="w-3.5 h-3.5 dark:text-green-400 text-green-600" />
               </div>
               <h4 className="text-sm font-bold text-foreground">The Outcome</h4>
             </div>
@@ -446,7 +446,7 @@ export default function Projects() {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#8B0000]/30 bg-[#8B0000]/10 text-sm text-red-300/80 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#8B0000]/30 bg-[#8B0000]/10 text-sm dark:text-red-300/80 text-red-700 mb-6">
             <Layers className="w-3.5 h-3.5" />
             Our Work
           </div>
@@ -473,7 +473,7 @@ export default function Projects() {
               onClick={() => setFilter(cat)}
               className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 border ${
                 filter === cat
-                  ? "bg-[#8B0000]/20 border-[#8B0000]/50 text-red-300"
+                  ? "dark:bg-[#8B0000]/20 dark:border-[#8B0000]/50 dark:text-red-300 bg-red-50 border-red-300 text-red-700"
                   : "border-white/10 text-gray-500 hover:text-gray-300 hover:border-white/20"
               }`}
             >

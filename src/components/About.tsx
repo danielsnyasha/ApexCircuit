@@ -319,7 +319,7 @@ export default function About() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#8B0000]/30 bg-[#8B0000]/10 text-sm text-red-300/80 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#8B0000]/30 bg-[#8B0000]/10 text-sm dark:text-red-300/80 text-red-700 mb-6">
             About Apex Circuit
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
@@ -354,7 +354,7 @@ export default function About() {
           viewport={{ once: true }}
           className="flex items-center gap-3 mb-10"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#2563EB]/30 bg-[#2563EB]/10 text-sm text-blue-300/80">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#2563EB]/30 bg-[#2563EB]/10 text-sm dark:text-blue-300/80 text-blue-700">
             Meet The Team
           </div>
           <div className="flex-1 h-px bg-white/5" />
@@ -489,7 +489,7 @@ export default function About() {
             >
               {/* Name + Role */}
               <motion.div variants={itemVariants}>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#8B0000]/30 bg-[#8B0000]/10 text-xs text-red-300/80 mb-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#8B0000]/30 bg-[#8B0000]/10 text-xs dark:text-red-300/80 text-red-700 mb-4">
                   Team Member
                 </div>
                 <h3 className="text-2xl font-bold text-foreground mb-1">{member.name}</h3>

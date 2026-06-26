@@ -167,7 +167,7 @@ export default function TechStack() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#1E3A8A]/40 bg-[#1E3A8A]/10 text-[11px] text-blue-300/90 mb-6 uppercase tracking-[0.18em] font-semibold">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#1E3A8A]/40 bg-[#1E3A8A]/10 text-[11px] dark:text-blue-300/90 text-blue-700 mb-6 uppercase tracking-[0.18em] font-semibold">
             <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse flex-shrink-0" />
             Our Tech Arsenal
           </div>

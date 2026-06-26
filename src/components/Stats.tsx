@@ -128,7 +128,7 @@ export default function Stats() {
           transition={{ duration: 0.7 }}
           className="text-center mb-14"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#8B0000]/30 bg-[#8B0000]/10 text-sm text-red-300/80 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#8B0000]/30 bg-[#8B0000]/10 text-sm dark:text-red-300/80 text-red-700 mb-6">
             Our Growth Journey
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">

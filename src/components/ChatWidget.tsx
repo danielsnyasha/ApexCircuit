@@ -74,9 +74,9 @@ export default function ChatWidget() {
                   href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Apex%20Circuit%2C%20I%27d%20like%20to%20discuss%20a%20project.`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-3 rounded-xl border border-white/5 hover:border-green-500/30 hover:bg-green-900/10 transition-all duration-200 group"
+                  className="flex items-center gap-3 p-3 rounded-xl border dark:border-white/5 border-black/5 hover:border-green-500/30 dark:hover:bg-green-900/10 hover:bg-green-50/80 transition-all duration-200 group"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-green-900/20 flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-lg dark:bg-green-900/20 bg-green-50 flex items-center justify-center flex-shrink-0">
                     <Phone className="w-3.5 h-3.5 text-green-400" />
                   </div>
                   <div>
@@ -91,9 +91,9 @@ export default function ChatWidget() {
                   href={LINKEDIN}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-3 rounded-xl border border-white/5 hover:border-blue-500/30 hover:bg-blue-900/10 transition-all duration-200 group"
+                  className="flex items-center gap-3 p-3 rounded-xl border dark:border-white/5 border-black/5 hover:border-blue-500/30 dark:hover:bg-blue-900/10 hover:bg-blue-50/80 transition-all duration-200 group"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-blue-900/20 flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-lg dark:bg-blue-900/20 bg-blue-50 flex items-center justify-center flex-shrink-0">
                     <ExternalLink className="w-3.5 h-3.5 text-blue-400" />
                   </div>
                   <div>

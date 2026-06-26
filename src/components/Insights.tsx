@@ -8,8 +8,9 @@ const articles = [
   {
     slug: "erpnext-implementation-guide",
     category: "ERP",
-    categoryColor: "text-cyan-400",
-    categoryBg: "bg-cyan-900/20 border-cyan-800/30",
+    categoryColor: "dark:text-cyan-400 text-cyan-700",
+    categoryBg: "dark:bg-cyan-900/20 dark:border-cyan-800/30 bg-cyan-50 border-cyan-200",
+    readColor: "dark:text-cyan-400 text-cyan-700",
     title: "ERPNext in 90 Days: Our Proven Implementation Framework",
     excerpt:
       "Most ERP projects run over budget and over time. Here's the exact phased approach we use to get organisations fully live in 90 days — from requirements through go-live and adoption.",
@@ -20,8 +21,9 @@ const articles = [
   {
     slug: "postgis-spatial-queries",
     category: "GIS",
-    categoryColor: "text-yellow-400",
-    categoryBg: "bg-yellow-900/20 border-yellow-800/30",
+    categoryColor: "dark:text-yellow-400 text-yellow-700",
+    categoryBg: "dark:bg-yellow-900/20 dark:border-yellow-800/30 bg-yellow-50 border-yellow-200",
+    readColor: "dark:text-yellow-400 text-yellow-700",
     title: "PostGIS for Developers: Spatial Queries That Actually Scale",
     excerpt:
       "ST_DWithin, spatial indexes, and why most GIS implementations are 10x slower than they need to be. A practical deep-dive for backend engineers building location-aware systems.",
@@ -32,8 +34,9 @@ const articles = [
   {
     slug: "react-native-offline-first",
     category: "Mobile",
-    categoryColor: "text-red-400",
-    categoryBg: "bg-red-900/20 border-red-800/30",
+    categoryColor: "dark:text-red-400 text-red-700",
+    categoryBg: "dark:bg-red-900/20 dark:border-red-800/30 bg-red-50 border-red-200",
+    readColor: "dark:text-red-400 text-red-700",
     title: "Building Offline-First React Native Apps for Enterprise",
     excerpt:
       "Field agents don't have 5G. Here's how we architect sync engines, conflict resolution, and optimistic UI in React Native to keep enterprise apps working in any connectivity environment.",
@@ -44,8 +47,9 @@ const articles = [
   {
     slug: "ai-automation-business-case",
     category: "AI & Automation",
-    categoryColor: "text-purple-400",
-    categoryBg: "bg-purple-900/20 border-purple-800/30",
+    categoryColor: "dark:text-purple-400 text-purple-700",
+    categoryBg: "dark:bg-purple-900/20 dark:border-purple-800/30 bg-purple-50 border-purple-200",
+    readColor: "dark:text-purple-400 text-purple-700",
     title: "How to Build a Business Case for AI Automation in 2025",
     excerpt:
       "CFOs don't buy 'AI'. They buy ROI. We break down how to quantify automation value — from hours saved to error rate reduction — and present it in a language that gets sign-off.",
@@ -56,8 +60,9 @@ const articles = [
   {
     slug: "nextjs-ssr-performance",
     category: "Web Dev",
-    categoryColor: "text-green-400",
-    categoryBg: "bg-green-900/20 border-green-800/30",
+    categoryColor: "dark:text-green-400 text-green-700",
+    categoryBg: "dark:bg-green-900/20 dark:border-green-800/30 bg-green-50 border-green-200",
+    readColor: "dark:text-green-400 text-green-700",
     title: "Next.js App Router: SSR vs SSG vs ISR — When to Use Each",
     excerpt:
       "The App Router changed the rendering model fundamentally. This guide cuts through the confusion and shows exactly when to reach for each strategy in production applications.",
@@ -68,8 +73,9 @@ const articles = [
   {
     slug: "enterprise-security-checklist",
     category: "Security",
-    categoryColor: "text-blue-400",
-    categoryBg: "bg-blue-900/20 border-blue-800/30",
+    categoryColor: "dark:text-blue-400 text-blue-700",
+    categoryBg: "dark:bg-blue-900/20 dark:border-blue-800/30 bg-blue-50 border-blue-200",
+    readColor: "dark:text-blue-400 text-blue-700",
     title: "Enterprise Application Security: The 12-Point Checklist",
     excerpt:
       "From OWASP Top 10 to JWT handling, secrets management, and pen testing — the security baseline every enterprise application should meet before going to production.",
@@ -84,7 +90,7 @@ export default function Insights() {
     <section id="insights" className="relative py-24 sm:py-32 bg-background overflow-hidden">
       <div className="absolute inset-0 dot-grid opacity-20" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#8B0000]/40 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent dark:via-white/5 via-black/5 to-transparent" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -96,7 +102,7 @@ export default function Insights() {
           className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-14"
         >
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#8B0000]/30 bg-[#8B0000]/10 text-sm text-red-300/80 mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#8B0000]/30 bg-[#8B0000]/10 text-sm text-red-400 dark:text-red-300/80 mb-6">
               <BookOpen className="w-3.5 h-3.5" />
               Insights
             </div>
@@ -130,27 +136,27 @@ export default function Insights() {
         >
           <Link
             href={`/insights/${articles[0].slug}`}
-            className="block rounded-2xl border dark:border-white/8 border-black/8 dark:bg-white/[0.02] bg-white/80 overflow-hidden group dark:hover:border-white/15 hover:border-black/15 transition-colors duration-300"
+            className="block rounded-2xl border dark:border-white/8 border-black/[0.08] dark:bg-white/[0.02] bg-card shadow-sm dark:shadow-none overflow-hidden group dark:hover:border-white/15 hover:border-black/15 hover:shadow-md transition-all duration-300"
           >
             <div className="grid sm:grid-cols-5">
-              <div className={`sm:col-span-1 h-2 sm:h-auto bg-gradient-to-br ${articles[0].gradient} opacity-70`} />
+              <div className={`sm:col-span-1 h-2 sm:h-auto bg-gradient-to-br ${articles[0].gradient} opacity-80`} />
               <div className="sm:col-span-4 p-8">
                 <div className="flex flex-wrap items-center gap-3 mb-4">
                   <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold border ${articles[0].categoryBg} ${articles[0].categoryColor}`}>
                     <Tag className="w-3 h-3" />
                     {articles[0].category}
                   </span>
-                  <span className="text-xs text-gray-600 flex items-center gap-1.5">
+                  <span className="text-xs dark:text-gray-600 text-gray-500 flex items-center gap-1.5">
                     <Clock className="w-3 h-3" />
                     {articles[0].readTime}
                   </span>
-                  <span className="text-xs text-gray-600">{articles[0].date}</span>
+                  <span className="text-xs dark:text-gray-600 text-gray-500">{articles[0].date}</span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3 group-hover:opacity-80 transition-opacity">
                   {articles[0].title}
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed mb-5">{articles[0].excerpt}</p>
-                <span className={`inline-flex items-center gap-1.5 text-sm font-semibold ${articles[0].categoryColor} group-hover:gap-2.5 transition-all duration-200`}>
+                <p className="dark:text-gray-400 text-gray-600 text-sm leading-relaxed mb-5">{articles[0].excerpt}</p>
+                <span className={`inline-flex items-center gap-1.5 text-sm font-semibold ${articles[0].readColor} group-hover:gap-2.5 transition-all duration-200`}>
                   Read article
                   <ArrowRight className="w-4 h-4" />
                 </span>
@@ -171,7 +177,7 @@ export default function Insights() {
             >
               <Link
                 href={`/insights/${article.slug}`}
-                className="group rounded-2xl border dark:border-white/8 border-black/8 dark:bg-white/[0.02] bg-white/80 overflow-hidden dark:hover:border-white/15 hover:border-black/15 transition-colors duration-300 flex flex-col h-full block"
+                className="group rounded-2xl border dark:border-white/8 border-black/[0.08] dark:bg-white/[0.02] bg-card shadow-sm dark:shadow-none overflow-hidden dark:hover:border-white/15 hover:border-black/15 hover:shadow-md transition-all duration-300 flex flex-col h-full"
               >
                 <div className={`h-1.5 bg-gradient-to-r ${article.gradient}`} />
 
@@ -181,7 +187,7 @@ export default function Insights() {
                       <Tag className="w-2.5 h-2.5" />
                       {article.category}
                     </span>
-                    <span className="text-[11px] text-gray-600 flex items-center gap-1">
+                    <span className="text-[11px] dark:text-gray-600 text-gray-500 flex items-center gap-1">
                       <Clock className="w-3 h-3" />
                       {article.readTime}
                     </span>
@@ -190,11 +196,11 @@ export default function Insights() {
                   <h3 className="text-base font-bold text-foreground mb-2 leading-snug group-hover:opacity-80 transition-opacity flex-1">
                     {article.title}
                   </h3>
-                  <p className="text-sm text-gray-500 leading-relaxed mb-5 line-clamp-3">{article.excerpt}</p>
+                  <p className="text-sm dark:text-gray-500 text-gray-600 leading-relaxed mb-5 line-clamp-3">{article.excerpt}</p>
 
                   <div className="flex items-center justify-between mt-auto">
-                    <span className="text-[11px] text-gray-600">{article.date}</span>
-                    <span className={`inline-flex items-center gap-1 text-[11px] font-semibold ${article.categoryColor} group-hover:gap-1.5 transition-all duration-200`}>
+                    <span className="text-[11px] dark:text-gray-600 text-gray-500">{article.date}</span>
+                    <span className={`inline-flex items-center gap-1 text-[11px] font-semibold ${article.readColor} group-hover:gap-1.5 transition-all duration-200`}>
                       Read
                       <ArrowRight className="w-3 h-3" />
                     </span>
@@ -213,7 +219,7 @@ export default function Insights() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-12 text-center"
         >
-          <p className="text-sm text-gray-500 mb-4">
+          <p className="text-sm dark:text-gray-500 text-gray-500 mb-4">
             New articles published monthly. Get them straight to your inbox.
           </p>
           <button

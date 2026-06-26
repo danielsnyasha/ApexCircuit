@@ -82,7 +82,7 @@ export default function Process() {
           transition={{ duration: 0.7 }}
           className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#8B0000]/30 bg-[#8B0000]/10 text-sm text-red-300/80 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#8B0000]/30 bg-[#8B0000]/10 text-sm dark:text-red-300/80 text-red-700 mb-6">
             How We Work
           </div>
           <h2 className="text-4xl sm:text-5xl font-black text-foreground mb-5 tracking-tight leading-tight">
