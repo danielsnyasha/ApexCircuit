@@ -118,6 +118,30 @@ html.light .grid-bg {
 }
 html.light ::-webkit-scrollbar-track { background: #F4F5FA; }
 
+/* ── Force Tailwind token utilities to be dynamic at runtime ──
+   @theme inline compiles bg-background / text-foreground as static
+   values. These explicit selectors override them with the correct
+   theme values so CSS variables actually switch on theme change. */
+html.dark .bg-background,
+html:not(.light) .bg-background  { background-color: #0D0D14; }
+html.light .bg-background         { background-color: #F4F5FA; }
+
+html.dark .bg-background-alt,
+html:not(.light) .bg-background-alt { background-color: #0B0B12; }
+html.light .bg-background-alt       { background-color: #ECEDF5; }
+
+html.dark .bg-card,
+html:not(.light) .bg-card { background-color: #13131E; }
+html.light .bg-card        { background-color: #FFFFFF; }
+
+html.dark .text-foreground,
+html:not(.light) .text-foreground { color: #F0F4FF; }
+html.light .text-foreground        { color: #0F0F1A; }
+
+html.dark .border-border,
+html:not(.light) .border-border { border-color: rgba(255,255,255,0.08); }
+html.light .border-border        { border-color: rgba(0,0,0,0.08); }
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

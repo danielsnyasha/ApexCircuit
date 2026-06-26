@@ -144,12 +144,12 @@ export default function Hero() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.9, duration: 0.6 }}
-                className="flex items-center gap-8 sm:gap-12 flex-wrap"
+                className="grid grid-cols-4 gap-4 sm:gap-8 max-w-sm sm:max-w-none"
               >
                 {stats.map((s, i) => (
                   <div key={i} className="flex flex-col gap-0.5">
-                    <span className="text-2xl font-black text-foreground leading-none">{s.value}</span>
-                    <span className="text-[10px] text-gray-500 uppercase tracking-[0.15em]">{s.label}</span>
+                    <span className="text-xl sm:text-2xl font-black text-foreground leading-none">{s.value}</span>
+                    <span className="text-[9px] sm:text-[10px] text-gray-500 uppercase tracking-[0.1em] sm:tracking-[0.15em] leading-tight">{s.label}</span>
                   </div>
                 ))}
               </motion.div>

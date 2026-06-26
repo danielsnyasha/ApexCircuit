@@ -333,7 +333,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {/* Canonical enforced via metadata above — also set the theme colour */}
         <meta name="theme-color" content="#0D0D14" />
-        <meta name="color-scheme" content="dark" />
+        <meta name="color-scheme" content="dark light" />
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <ThemeProvider>
