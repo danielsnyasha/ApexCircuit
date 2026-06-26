@@ -1,5 +1,5 @@
 ﻿import { prisma } from "@/lib/prisma";
-import { Enquiry, AdminAllowlist, AccessDeniedLog } from "@/generated/prisma";
+import { Enquiry, AdminAllowlist, AccessDeniedLog } from "@prisma/client";
 import { UserButton } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
 import { FileText, Image as ImageIcon, File, Download, ExternalLink } from "lucide-react";
