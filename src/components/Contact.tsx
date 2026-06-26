@@ -189,10 +189,10 @@ export default function Contact() {
   };
 
   const inputClass =
-    "bg-white/5 border-white/10 text-white placeholder:text-gray-600 focus:border-[#8B0000]/50 focus:ring-[#8B0000]/20 h-10 rounded-xl";
+    "dark:bg-white/5 dark:border-white/10 dark:text-white dark:placeholder:text-gray-600 bg-white border-black/10 text-foreground placeholder:text-gray-400 focus:border-[#8B0000]/50 focus:ring-[#8B0000]/20 h-10 rounded-xl";
 
   return (
-    <section className="relative py-24 sm:py-32 bg-[#0D0D14] overflow-hidden">
+    <section className="relative py-24 sm:py-32 bg-background overflow-hidden">
       <div className="absolute inset-0 dot-grid opacity-20" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#8B0000]/40 to-transparent" />
       <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-[#8B0000]/5 to-transparent" />
@@ -210,7 +210,7 @@ export default function Contact() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#8B0000]/30 bg-[#8B0000]/10 text-sm text-red-300/80 mb-6">
             Let&apos;s Build Together
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
             Start Your <span className="gradient-text">Project</span>
           </h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
@@ -229,8 +229,8 @@ export default function Contact() {
             className="lg:col-span-2 space-y-6"
           >
             <motion.div variants={itemVariants}>
-              <h3 className="text-xl font-bold text-white mb-2">Get In Touch</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <h3 className="text-xl font-bold text-foreground mb-2">Get In Touch</h3>
+              <p className="dark:text-gray-400 text-gray-600 text-sm leading-relaxed">
                 We&apos;re a team of engineers who genuinely care about what we build.
                 Reach out and let&apos;s start a conversation.
               </p>
@@ -244,14 +244,14 @@ export default function Contact() {
                   href={info.href}
                   target={info.href.startsWith("http") ? "_blank" : undefined}
                   rel={info.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="flex items-center gap-4 glass-card rounded-xl p-4 border border-white/5 hover:border-white/10 transition-all duration-300 group"
+                  className="flex items-center gap-4 glass-card rounded-xl p-4 border dark:border-white/5 dark:hover:border-white/10 border-black/5 hover:border-black/10 transition-all duration-300 group"
                 >
                   <div className={`w-10 h-10 rounded-lg ${info.bg} flex items-center justify-center shrink-0`}>
                     <info.icon className="w-4 h-4" style={{ color: info.color }} />
                   </div>
                   <div>
                     <p className="text-xs text-gray-500">{info.label}</p>
-                    <p className="text-sm text-white font-medium group-hover:text-gray-200 transition-colors">
+                    <p className="text-sm text-foreground font-medium group-hover:opacity-80 transition-opacity">
                       {info.value}
                     </p>
                   </div>
@@ -265,7 +265,7 @@ export default function Contact() {
             >
               <div className="flex items-center gap-2 mb-2">
                 <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                <span className="text-sm font-medium text-white">Available for Projects</span>
+                <span className="text-sm font-medium text-foreground">Available for Projects</span>
               </div>
               <p className="text-xs text-gray-500">
                 We respond within 24 hours. For urgent requests, reach out on LinkedIn.
@@ -277,7 +277,7 @@ export default function Contact() {
               variants={itemVariants}
               className="rounded-xl p-4 bg-white/[0.02] border border-white/5"
             >
-              <p className="text-xs font-semibold text-white mb-1.5">Share your project files</p>
+              <p className="text-xs font-semibold text-foreground mb-1.5">Share your project files</p>
               <p className="text-xs text-gray-500 leading-relaxed">
                 Attach wireframes, briefs, spreadsheets, or reference images directly in the form.
                 Supported: PNG, JPG, PDF, Word, Excel, PowerPoint (max 10 MB each, up to 5 files).
@@ -305,7 +305,7 @@ export default function Contact() {
                   <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mb-4">
                     <CheckCircle2 className="w-8 h-8 text-green-400" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">Message Received!</h3>
+                  <h3 className="text-xl font-bold text-foreground mb-2">Message Received!</h3>
                   <p className="text-gray-400 text-sm max-w-xs">
                     We&apos;ll review your project details and get back to you within 24 hours.
                   </p>
@@ -399,7 +399,7 @@ export default function Contact() {
                         <SelectTrigger className={`${inputClass} w-full`}>
                           <SelectValue placeholder="Select service..." />
                         </SelectTrigger>
-                        <SelectContent className="bg-[#13131E] border-white/10 text-white">
+                        <SelectContent className="dark:bg-[#13131E] bg-white dark:border-white/10 border-black/10 dark:text-white text-foreground">
                           <SelectItem value="enterprise-app">Enterprise App Development</SelectItem>
                           <SelectItem value="web-dev">Web Development</SelectItem>
                           <SelectItem value="erp">ERP Systems (ERPNext)</SelectItem>
@@ -415,7 +415,7 @@ export default function Contact() {
                         <SelectTrigger className={`${inputClass} w-full`}>
                           <SelectValue placeholder="Select budget..." />
                         </SelectTrigger>
-                        <SelectContent className="bg-[#13131E] border-white/10 text-white">
+                        <SelectContent className="dark:bg-[#13131E] bg-white dark:border-white/10 border-black/10 dark:text-white text-foreground">
                           <SelectItem value="under-5k">Under $5,000</SelectItem>
                           <SelectItem value="5k-20k">$5,000 to $20,000</SelectItem>
                           <SelectItem value="20k-50k">$20,000 to $50,000</SelectItem>
@@ -434,7 +434,7 @@ export default function Contact() {
                         <SelectTrigger className={`${inputClass} w-full`}>
                           <SelectValue placeholder="Select timeline..." />
                         </SelectTrigger>
-                        <SelectContent className="bg-[#13131E] border-white/10 text-white">
+                        <SelectContent className="dark:bg-[#13131E] bg-white dark:border-white/10 border-black/10 dark:text-white text-foreground">
                           <SelectItem value="asap">ASAP</SelectItem>
                           <SelectItem value="1-3m">1 to 3 months</SelectItem>
                           <SelectItem value="3-6m">3 to 6 months</SelectItem>
@@ -449,7 +449,7 @@ export default function Contact() {
                         <SelectTrigger className={`${inputClass} w-full`}>
                           <SelectValue placeholder="Select size..." />
                         </SelectTrigger>
-                        <SelectContent className="bg-[#13131E] border-white/10 text-white">
+                        <SelectContent className="dark:bg-[#13131E] bg-white dark:border-white/10 border-black/10 dark:text-white text-foreground">
                           <SelectItem value="1-10">1 to 10 employees</SelectItem>
                           <SelectItem value="11-50">11 to 50 employees</SelectItem>
                           <SelectItem value="51-200">51 to 200 employees</SelectItem>
@@ -472,7 +472,7 @@ export default function Contact() {
                       onChange={handleInput("description")}
                       required
                       rows={4}
-                      className="bg-white/5 border-white/10 text-white placeholder:text-gray-600 focus:border-[#8B0000]/50 focus:ring-[#8B0000]/20 rounded-xl resize-none"
+                      className="dark:bg-white/5 dark:border-white/10 dark:text-white dark:placeholder:text-gray-600 bg-white border-black/10 text-foreground placeholder:text-gray-400 focus:border-[#8B0000]/50 focus:ring-[#8B0000]/20 rounded-xl resize-none"
                     />
                   </div>
 
@@ -492,12 +492,12 @@ export default function Contact() {
                       className={`relative flex flex-col items-center justify-center gap-2 rounded-xl border-2 border-dashed px-4 py-6 cursor-pointer transition-all duration-200 ${
                         dragging
                           ? "border-[#8B0000]/60 bg-[#8B0000]/10"
-                          : "border-white/10 hover:border-white/20 hover:bg-white/[0.02]"
+                          : "dark:border-white/10 dark:hover:border-white/20 dark:hover:bg-white/[0.02] border-black/10 hover:border-black/20 hover:bg-black/[0.02]"
                       }`}
                     >
                       <Upload className={`w-7 h-7 ${dragging ? "text-red-400" : "text-gray-600"}`} />
                       <p className="text-xs text-gray-500 text-center">
-                        <span className="text-white font-medium">Click to upload</span> or drag and drop
+                        <span className="text-foreground font-medium">Click to upload</span> or drag and drop
                       </p>
                       <p className="text-[10px] text-gray-600">PNG, JPG, PDF, DOCX, XLSX, PPTX</p>
                       <input
@@ -520,7 +520,7 @@ export default function Contact() {
                         {files.map((af, idx) => (
                           <div
                             key={idx}
-                            className="flex items-center gap-3 rounded-xl bg-white/[0.03] border border-white/5 px-3 py-2.5"
+                            className="flex items-center gap-3 rounded-xl dark:bg-white/[0.03] dark:border-white/5 bg-black/[0.02] border border-black/5 px-3 py-2.5"
                           >
                             {af.preview ? (
                               // eslint-disable-next-line @next/next/no-img-element
@@ -535,7 +535,7 @@ export default function Contact() {
                               </div>
                             )}
                             <div className="flex-1 min-w-0">
-                              <p className="text-xs text-white font-medium truncate">{af.file.name}</p>
+                              <p className="text-xs text-foreground font-medium truncate">{af.file.name}</p>
                               <p className="text-[10px] text-gray-500">{formatBytes(af.file.size)}</p>
                             </div>
                             <button

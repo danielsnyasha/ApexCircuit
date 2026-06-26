@@ -96,7 +96,7 @@ const row3: TechItem[] = [
 
 function TechCard({ item }: { item: TechItem }) {
   return (
-    <div className="flex items-center gap-3.5 px-5 py-3.5 rounded-xl border border-white/[0.07] flex-shrink-0 group hover:border-white/20 hover:bg-white/[0.05] transition-all duration-300 bg-[#13131E] min-w-[160px]">
+    <div className="flex items-center gap-3.5 px-5 py-3.5 rounded-xl border dark:border-white/[0.07] border-black/[0.07] flex-shrink-0 group dark:hover:border-white/20 dark:hover:bg-white/[0.05] hover:border-black/20 hover:bg-black/[0.03] transition-all duration-300 dark:bg-[#13131E] bg-white min-w-[160px]">
       <div className="w-10 h-10 flex items-center justify-center flex-shrink-0">
         {item.customIcon ? (
           item.customIcon
@@ -119,7 +119,7 @@ function TechCard({ item }: { item: TechItem }) {
           />
         ) : null}
       </div>
-      <span className="text-[14px] font-medium text-gray-300 whitespace-nowrap group-hover:text-white transition-colors duration-300">
+      <span className="text-[14px] font-medium dark:text-gray-300 text-gray-700 whitespace-nowrap dark:group-hover:text-white group-hover:text-gray-900 transition-colors duration-300">
         {item.name}
       </span>
     </div>
@@ -154,7 +154,7 @@ function MarqueeRow({
 
 export default function TechStack() {
   return (
-    <section className="relative py-20 sm:py-28 bg-[#0D0D14] overflow-hidden">
+    <section className="relative py-20 sm:py-28 bg-background overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-15 pointer-events-none" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] rounded-full bg-[#1E3A8A]/5 blur-[100px] pointer-events-none" />
 
@@ -171,7 +171,7 @@ export default function TechStack() {
             <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse flex-shrink-0" />
             Our Tech Arsenal
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-foreground mb-4 tracking-tight">
             Built with the{" "}
             <span className="gradient-text-blue">world&apos;s best</span>{" "}
             tools

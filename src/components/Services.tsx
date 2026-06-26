@@ -461,7 +461,7 @@ export default function Services() {
   };
 
   return (
-    <section className="relative py-28 sm:py-36 bg-[#0D0D14] overflow-hidden">
+    <section className="relative py-28 sm:py-36 bg-background overflow-hidden">
       <div className="absolute inset-0 dot-grid opacity-20" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/40 to-transparent" />
       <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#1E3A8A]/10 blur-[120px] pointer-events-none" />
@@ -480,11 +480,11 @@ export default function Services() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#2563EB]/30 bg-[#2563EB]/10 text-sm text-blue-300/80 mb-6">
             What We Build
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight mb-5">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-foreground leading-tight tracking-tight mb-5">
             Eleven capabilities.<br />
             <span className="gradient-text-blue">Endless possibilities.</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="dark:text-gray-400 text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
             From enterprise software to cloud infrastructure, GIS, and AI automation — we cover the full
             spectrum of modern technology needs.
           </p>
@@ -562,7 +562,7 @@ export default function Services() {
                           </span>
                         </div>
 
-                        <h3 className="text-2xl sm:text-3xl font-black text-white mb-3 leading-tight">
+                        <h3 className="text-2xl sm:text-3xl font-black text-foreground mb-3 leading-tight">
                           {service.title}
                         </h3>
                         <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-lg">
@@ -655,7 +655,7 @@ export default function Services() {
                     </span>
                   </div>
 
-                  <h3 className={`font-black text-white mb-2.5 leading-tight ${layout.featured ? "text-2xl sm:text-3xl" : "text-lg sm:text-xl"}`}>
+                  <h3 className={`font-black text-foreground mb-2.5 leading-tight ${layout.featured ? "text-2xl sm:text-3xl" : "text-lg sm:text-xl"}`}>
                     {service.title}
                   </h3>
 
@@ -699,7 +699,7 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-16 flex flex-col sm:flex-row items-center justify-between gap-6 pt-10 border-t border-white/5"
+          className="mt-16 flex flex-col sm:flex-row items-center justify-between gap-6 pt-10 border-t dark:border-white/5 border-black/5"
         >
           <p className="text-gray-500 text-sm">
             Don&apos;t see exactly what you need? Let&apos;s talk.

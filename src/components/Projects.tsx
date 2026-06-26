@@ -292,7 +292,7 @@ function CaseStudyDrawer({ project, onClose }: { project: Project; onClose: () =
         animate={{ x: 0 }}
         exit={{ x: "100%" }}
         transition={{ type: "spring", damping: 28, stiffness: 280 }}
-        className="fixed right-0 top-0 bottom-0 z-[8001] w-full max-w-xl bg-[#13131E] border-l border-white/10 overflow-y-auto shadow-2xl"
+        className="fixed right-0 top-0 bottom-0 z-[8001] w-full max-w-xl dark:bg-[#13131E] bg-white dark:border-white/10 border-black/10 border-l overflow-y-auto shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
@@ -332,7 +332,7 @@ function CaseStudyDrawer({ project, onClose }: { project: Project; onClose: () =
               <div className="w-7 h-7 rounded-lg bg-red-900/20 flex items-center justify-center">
                 <Target className="w-3.5 h-3.5 text-red-400" />
               </div>
-              <h4 className="text-sm font-bold text-white">The Challenge</h4>
+              <h4 className="text-sm font-bold text-foreground">The Challenge</h4>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">{project.caseStudy.challenge}</p>
           </div>
@@ -343,7 +343,7 @@ function CaseStudyDrawer({ project, onClose }: { project: Project; onClose: () =
               <div className="w-7 h-7 rounded-lg bg-blue-900/20 flex items-center justify-center">
                 <Lightbulb className="w-3.5 h-3.5 text-blue-400" />
               </div>
-              <h4 className="text-sm font-bold text-white">Our Approach</h4>
+              <h4 className="text-sm font-bold text-foreground">Our Approach</h4>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">{project.caseStudy.approach}</p>
           </div>
@@ -354,7 +354,7 @@ function CaseStudyDrawer({ project, onClose }: { project: Project; onClose: () =
               <div className="w-7 h-7 rounded-lg bg-green-900/20 flex items-center justify-center">
                 <TrendingUp className="w-3.5 h-3.5 text-green-400" />
               </div>
-              <h4 className="text-sm font-bold text-white">The Outcome</h4>
+              <h4 className="text-sm font-bold text-foreground">The Outcome</h4>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">{project.caseStudy.outcome}</p>
           </div>
@@ -432,7 +432,7 @@ export default function Projects() {
   }, [hovered, next]);
 
   return (
-    <section className="relative py-24 sm:py-32 bg-[#0D0D14] overflow-hidden">
+    <section className="relative py-24 sm:py-32 bg-background overflow-hidden">
       <div className="absolute inset-0 dot-grid opacity-20" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#8B0000]/40 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
@@ -450,11 +450,11 @@ export default function Projects() {
             <Layers className="w-3.5 h-3.5" />
             Our Work
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
             Projects That{" "}
             <span className="gradient-text">Ship & Scale</span>
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="text-lg dark:text-gray-400 text-gray-600 max-w-2xl mx-auto">
             Real systems built for real businesses: from fintech SaaS and luxury e-commerce to AI automation, ERP, and geospatial platforms.
           </p>
         </motion.div>
@@ -508,8 +508,8 @@ export default function Projects() {
                   onClick={() => setActive(i)}
                   className={`group flex items-center gap-3 px-4 py-3 rounded-xl text-left transition-all duration-300 shrink-0 lg:shrink border ${
                     isActive
-                      ? `bg-white/[0.06] ${p.border} shadow-lg ${p.glow}`
-                      : "border-transparent hover:bg-white/[0.03] hover:border-white/5"
+                      ? `dark:bg-white/[0.06] bg-black/[0.03] ${p.border} shadow-lg ${p.glow}`
+                      : "border-transparent dark:hover:bg-white/[0.03] dark:hover:border-white/5 hover:bg-black/[0.02] hover:border-black/5"
                   }`}
                 >
                   <div className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 transition-all duration-300 ${
@@ -536,7 +536,7 @@ export default function Projects() {
           </div>
 
           {/* RIGHT: Project detail card */}
-          <div className="relative glass-card rounded-2xl border border-white/5 overflow-hidden min-h-[540px]">
+          <div className="relative glass-card rounded-2xl border dark:border-white/5 border-black/5 overflow-hidden min-h-[540px]">
 
             {/* Hero image banner */}
             <AnimatePresence mode="wait">
@@ -589,7 +589,7 @@ export default function Projects() {
                     </div>
                     <div>
                       <p className="text-[10px] text-gray-500 mb-0.5">{project.period}</p>
-                      <h3 className="text-xl sm:text-2xl font-bold text-white leading-tight">{project.name}</h3>
+                      <h3 className="text-xl sm:text-2xl font-bold text-foreground leading-tight">{project.name}</h3>
                     </div>
                   </div>
                   <button
@@ -639,7 +639,7 @@ export default function Projects() {
             </AnimatePresence>
 
             {/* Bottom nav bar */}
-            <div className="absolute bottom-0 left-0 right-0 px-7 sm:px-10 py-4 border-t border-white/5 flex items-center justify-between bg-[#0D0D14]/70 backdrop-blur-sm">
+            <div className="absolute bottom-0 left-0 right-0 px-7 sm:px-10 py-4 border-t dark:border-white/5 border-black/5 flex items-center justify-between dark:bg-[#0D0D14]/70 bg-white/70 backdrop-blur-sm">
               <div className="flex gap-1.5">
                 {filtered.map((_, i) => (
                   <button

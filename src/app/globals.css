@@ -39,6 +39,7 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-background-alt: var(--background-alt);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -51,6 +52,7 @@
 :root {
   --radius: 0.625rem;
   --background: #0D0D14;
+  --background-alt: #0B0B12;
   --foreground: #F0F4FF;
   --card: #13131E;
   --card-foreground: #F0F4FF;
@@ -82,6 +84,39 @@
   --sidebar-border: rgba(255, 255, 255, 0.08);
   --sidebar-ring: #8B0000;
 }
+
+html.light {
+  color-scheme: light;
+  --background: #F4F5FA;
+  --background-alt: #ECEDF5;
+  --foreground: #0F0F1A;
+  --card: #FFFFFF;
+  --card-foreground: #0F0F1A;
+  --popover: #FFFFFF;
+  --popover-foreground: #0F0F1A;
+  --muted: #E8EAF2;
+  --muted-foreground: #6B7280;
+  --border: rgba(0, 0, 0, 0.08);
+  --input: rgba(0, 0, 0, 0.06);
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #0F0F1A;
+  --sidebar-border: rgba(0,0,0,0.08);
+}
+html.light .glass-card {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(0, 0, 0, 0.07) !important;
+}
+html.light .dot-grid {
+  background-image: radial-gradient(rgba(0,0,0,0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+html.light .grid-bg {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+html.light ::-webkit-scrollbar-track { background: #F4F5FA; }
 
 @layer base {
   * {

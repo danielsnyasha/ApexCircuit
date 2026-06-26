@@ -301,7 +301,7 @@ function renderBlock(block: Block, key: number, accent: string) {
       return (
         <h2
           key={key}
-          className="flex items-start gap-3 text-xl sm:text-2xl font-bold text-white mt-12 mb-4 leading-snug"
+          className="flex items-start gap-3 text-xl sm:text-2xl font-bold text-foreground mt-12 mb-4 leading-snug"
         >
           <span
             className="mt-1.5 shrink-0 w-1 h-5 rounded-full"
@@ -312,7 +312,7 @@ function renderBlock(block: Block, key: number, accent: string) {
       );
     case "p":
       return (
-        <p key={key} className="text-gray-300 leading-[1.85] mb-5 text-[15px]">
+        <p key={key} className="dark:text-gray-300 text-gray-700 leading-[1.85] mb-5 text-[15px]">
           {block.text}
         </p>
       );
@@ -320,7 +320,7 @@ function renderBlock(block: Block, key: number, accent: string) {
       return (
         <ul key={key} className="space-y-3 mb-7">
           {block.items.map((item, i) => (
-            <li key={i} className="flex items-start gap-3 text-[15px] text-gray-300 leading-relaxed">
+            <li key={i} className="flex items-start gap-3 text-[15px] dark:text-gray-300 text-gray-700 leading-relaxed">
               <span
                 className="mt-2 shrink-0 w-1.5 h-1.5 rounded-full"
                 style={{ background: accent }}
@@ -332,8 +332,8 @@ function renderBlock(block: Block, key: number, accent: string) {
       );
     case "code":
       return (
-        <div key={key} className="mb-7 rounded-xl overflow-hidden border border-white/10">
-          <div className="flex items-center gap-2 px-4 py-2.5 bg-white/[0.04] border-b border-white/10">
+        <div key={key} className="mb-7 rounded-xl overflow-hidden border dark:border-white/10 border-black/10">
+          <div className="flex items-center gap-2 px-4 py-2.5 dark:bg-white/[0.04] bg-gray-100 border-b dark:border-white/10 border-black/10">
             <Terminal className="w-3.5 h-3.5 text-gray-500" />
             <span className="text-[11px] font-semibold uppercase tracking-widest text-gray-500">
               {block.lang}
@@ -344,8 +344,8 @@ function renderBlock(block: Block, key: number, accent: string) {
               <span className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
             </div>
           </div>
-          <pre className="bg-[#0A0A10] p-5 overflow-x-auto text-[13px]">
-            <code className="text-emerald-300 font-mono whitespace-pre leading-relaxed">
+          <pre className="dark:bg-[#0A0A10] bg-gray-100 p-5 overflow-x-auto text-[13px]">
+            <code className="dark:text-emerald-300 text-emerald-700 font-mono whitespace-pre leading-relaxed">
               {block.code}
             </code>
           </pre>
@@ -353,14 +353,14 @@ function renderBlock(block: Block, key: number, accent: string) {
       );
     case "table":
       return (
-        <div key={key} className="overflow-x-auto mb-7 rounded-xl border border-white/10">
+        <div key={key} className="overflow-x-auto mb-7 rounded-xl border dark:border-white/10 border-black/10">
           <table className="w-full text-sm border-collapse">
             <thead>
-              <tr className="bg-white/[0.04]">
+              <tr className="dark:bg-white/[0.04] bg-gray-50">
                 {block.headers.map((h, i) => (
                   <th
                     key={i}
-                    className="text-left px-5 py-3 text-xs font-semibold uppercase tracking-wider text-gray-400 border-b border-white/10"
+                    className="text-left px-5 py-3 text-xs font-semibold uppercase tracking-wider dark:text-gray-400 text-gray-600 border-b dark:border-white/10 border-black/10"
                   >
                     {h}
                   </th>
@@ -371,12 +371,12 @@ function renderBlock(block: Block, key: number, accent: string) {
               {block.rows.map((row, i) => (
                 <tr
                   key={i}
-                  className={i % 2 === 0 ? "bg-transparent" : "bg-white/[0.02]"}
+                  className={i % 2 === 0 ? "bg-transparent" : "dark:bg-white/[0.02] bg-gray-50/50"}
                 >
                   {row.map((cell, j) => (
                     <td
                       key={j}
-                      className={`px-5 py-3 border-b border-white/5 text-[13px] ${j === 0 ? "text-white font-medium" : "text-gray-400"}`}
+                      className={`px-5 py-3 border-b dark:border-white/5 border-black/5 text-[13px] ${j === 0 ? "text-foreground font-medium" : "dark:text-gray-400 text-gray-600"}`}
                     >
                       {cell}
                     </td>
@@ -390,13 +390,13 @@ function renderBlock(block: Block, key: number, accent: string) {
     case "hr":
       return (
         <div key={key} className="my-12 flex items-center gap-4">
-          <div className="flex-1 h-px bg-white/5" />
+          <div className="flex-1 h-px dark:bg-white/5 bg-black/5" />
           <div className="flex gap-1">
-            <span className="w-1.5 h-1.5 rounded-full bg-white/20" />
-            <span className="w-1.5 h-1.5 rounded-full bg-white/10" />
-            <span className="w-1.5 h-1.5 rounded-full bg-white/5" />
+            <span className="w-1.5 h-1.5 rounded-full dark:bg-white/20 bg-black/20" />
+            <span className="w-1.5 h-1.5 rounded-full dark:bg-white/10 bg-black/10" />
+            <span className="w-1.5 h-1.5 rounded-full dark:bg-white/5 bg-black/5" />
           </div>
-          <div className="flex-1 h-px bg-white/5" />
+          <div className="flex-1 h-px dark:bg-white/5 bg-black/5" />
         </div>
       );
   }
@@ -408,16 +408,16 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
   if (!article) notFound();
 
   return (
-    <main className="min-h-screen bg-[#0D0D14]">
+    <main className="min-h-screen bg-background">
       {/* Top gradient bar */}
       <div className={`h-0.5 w-full bg-gradient-to-r ${article.gradient}`} />
 
       {/* Sticky nav */}
-      <nav className="sticky top-0 z-40 border-b border-white/5 bg-[#0D0D14]/85 backdrop-blur-xl">
+      <nav className="sticky top-0 z-40 border-b dark:border-white/5 border-black/5 dark:bg-[#0D0D14]/85 bg-white/85 backdrop-blur-xl">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
           <Link
             href="/#insights"
-            className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-white transition-colors group"
+            className="inline-flex items-center gap-2 text-sm text-gray-500 dark:hover:text-white hover:text-gray-900 transition-colors group"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
             Back to Insights
@@ -426,7 +426,7 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
             <div className="w-6 h-6 rounded-md bg-gradient-to-br from-[#8B0000] to-[#DC2626] flex items-center justify-center">
               <Zap className="w-3 h-3 text-white" />
             </div>
-            <span className="text-sm font-bold text-white">
+            <span className="text-sm font-bold text-foreground">
               Apex<span className="text-[#DC2626]"> Circuit</span>
             </span>
           </Link>
@@ -434,7 +434,7 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
       </nav>
 
       {/* Hero */}
-      <div className="relative overflow-hidden bg-[#0B0B12] border-b border-white/5">
+      <div className="relative overflow-hidden bg-background-alt border-b dark:border-white/5 border-black/5">
         <div className="absolute inset-0 dot-grid opacity-10" />
         {/* Accent glow */}
         <div
@@ -461,13 +461,13 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
           </div>
 
           {/* Title */}
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-[1.1] tracking-tight mb-6">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-foreground leading-[1.1] tracking-tight mb-6">
             {article.title}
           </h1>
 
           {/* Excerpt */}
           <p
-            className="text-base sm:text-lg text-gray-400 leading-relaxed pl-4 border-l-2"
+            className="text-base sm:text-lg dark:text-gray-400 text-gray-600 leading-relaxed pl-4 border-l-2"
             style={{ borderColor: article.accent }}
           >
             {article.excerpt}
@@ -483,7 +483,7 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
 
         {/* CTA */}
         <div
-          className="mt-16 relative rounded-2xl overflow-hidden border border-white/8 p-8 sm:p-10 text-center"
+          className="mt-16 relative rounded-2xl overflow-hidden border dark:border-white/8 border-black/8 p-8 sm:p-10 text-center"
           style={{
             background: `radial-gradient(ellipse at 50% 0%, ${article.accent}12, transparent 70%)`,
           }}
@@ -498,8 +498,8 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
           >
             <Zap className="w-5 h-5" style={{ color: article.accent }} />
           </div>
-          <h3 className="text-xl font-bold text-white mb-2">Work with Apex Circuit</h3>
-          <p className="text-gray-400 text-sm mb-7 max-w-sm mx-auto">
+          <h3 className="text-xl font-bold text-foreground mb-2">Work with Apex Circuit</h3>
+          <p className="dark:text-gray-400 text-gray-600 text-sm mb-7 max-w-sm mx-auto">
             Have a project in mind? Let&apos;s talk about what we can build together.
           </p>
           <Link

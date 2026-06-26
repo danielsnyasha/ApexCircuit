@@ -83,7 +83,7 @@ function AnimatedNumber({ value, suffix, duration }: { value: number; suffix: st
 
 export default function Vision() {
   return (
-    <section className="relative py-24 sm:py-32 overflow-hidden bg-[#0D0D14]">
+    <section className="relative py-24 sm:py-32 overflow-hidden bg-background">
       {/* Background gradient */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#8B0000]/50 to-transparent" />
@@ -107,7 +107,7 @@ export default function Vision() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#8B0000]/30 bg-[#8B0000]/10 text-sm text-red-300/80 mb-6">
             Our North Star
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
             Vision &amp; <span className="gradient-text">Mission</span>
           </h2>
         </motion.div>
@@ -158,8 +158,8 @@ export default function Vision() {
                     <item.icon className={`w-5 h-5 ${item.color}`} />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
-                    <p className="text-gray-400 text-sm leading-relaxed"
+                    <h3 className="text-lg font-bold text-foreground mb-2">{item.title}</h3>
+                    <p className="dark:text-gray-400 text-gray-600 text-sm leading-relaxed"
                       dangerouslySetInnerHTML={{ __html: item.text.replace(/&apos;/g, "'") }}
                     />
                   </div>
@@ -187,7 +187,7 @@ export default function Vision() {
                 >
                   <val.icon className="w-5 h-5" style={{ color: val.color }} />
                 </div>
-                <h4 className="text-base font-bold text-white mb-2">{val.title}</h4>
+                <h4 className="text-base font-bold text-foreground mb-2">{val.title}</h4>
                 <p className="text-xs text-gray-500 leading-relaxed">{val.desc}</p>
               </motion.div>
             ))}
@@ -197,7 +197,7 @@ export default function Vision() {
               variants={itemVariants}
               className="col-span-2 glass-card rounded-2xl p-6 border border-[#8B0000]/20 bg-gradient-to-br from-[#8B0000]/10 to-[#1E3A8A]/5 text-center"
             >
-              <p className="text-2xl font-bold text-white mb-1">
+              <p className="text-2xl font-bold text-foreground mb-1">
                 &ldquo;Your Shortcut to Excellence&rdquo;
               </p>
               <p className="text-sm text-gray-500">The Apex Circuit Promise</p>

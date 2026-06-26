@@ -305,7 +305,7 @@ export default function About() {
   const nextMember = useCallback(() => setActiveMember((p) => (p + 1) % team.length), []);
 
   return (
-    <section className="relative py-20 sm:py-28 bg-[#0D0D14] overflow-x-hidden">
+    <section className="relative py-20 sm:py-28 bg-background overflow-x-hidden">
       <div className="absolute inset-0 dot-grid opacity-30" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent to-[#8B0000]/40" />
 
@@ -322,11 +322,11 @@ export default function About() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#8B0000]/30 bg-[#8B0000]/10 text-sm text-red-300/80 mb-6">
             About Apex Circuit
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
             We Don&apos;t Consult.{" "}
             <span className="gradient-text">We Deliver.</span>
           </h2>
-          <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg dark:text-gray-400 text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Founded in 2019, Apex Circuit is a technology company built on a simple
             belief: organizations deserve more than advice. They deserve results.
             We build enterprise-grade systems, from ERP deployments to AI pipelines,
@@ -492,7 +492,7 @@ export default function About() {
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#8B0000]/30 bg-[#8B0000]/10 text-xs text-red-300/80 mb-4">
                   Team Member
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-1">{member.name}</h3>
+                <h3 className="text-2xl font-bold text-foreground mb-1">{member.name}</h3>
                 <p className="text-[#60A5FA] font-medium text-base mb-2">{member.role}</p>
                 <div className="flex flex-wrap items-center gap-3 text-xs text-gray-500 mb-4">
                   <span className="flex items-center gap-1"><MapPin className="w-3 h-3" /> {member.location}</span>
@@ -503,7 +503,7 @@ export default function About() {
                     </>
                   )}
                 </div>
-                <p className="text-gray-400 leading-relaxed text-sm">{member.bio}</p>
+                <p className="dark:text-gray-400 text-gray-600 leading-relaxed text-sm">{member.bio}</p>
               </motion.div>
 
               {/* Experience */}
@@ -512,11 +512,11 @@ export default function About() {
                   <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Professional Experience</h4>
                   <div className="space-y-2">
                     {member.experience.map((exp) => (
-                      <div key={exp.company} className={`flex items-start gap-3 rounded-xl p-3 bg-white/[0.02] border ${exp.border}`}>
+                      <div key={exp.company} className={`flex items-start gap-3 rounded-xl p-3 dark:bg-white/[0.02] bg-black/[0.02] border ${exp.border}`}>
                         <div className={`w-2 h-2 rounded-full mt-1.5 shrink-0 ${exp.dot}`} />
                         <div className="flex-1 min-w-0">
                           <div className="flex flex-wrap items-baseline justify-between gap-x-2">
-                            <p className="text-sm font-semibold text-white">{exp.role}</p>
+                            <p className="text-sm font-semibold text-foreground">{exp.role}</p>
                             <span className="text-[10px] text-gray-600 shrink-0">{exp.period}</span>
                           </div>
                           <p className="text-[11px] text-gray-500 mt-0.5">{exp.company}</p>
@@ -536,7 +536,7 @@ export default function About() {
                       <div key={edu.title} className={`flex items-start gap-3 rounded-xl p-3 ${edu.bg} border ${edu.border}`}>
                         <edu.icon className={`w-4 h-4 mt-0.5 shrink-0 ${edu.color}`} />
                         <div>
-                          <p className="text-xs font-semibold text-white leading-snug">{edu.title}</p>
+                          <p className="text-xs font-semibold text-foreground leading-snug">{edu.title}</p>
                           <p className="text-[10px] text-gray-500 mt-0.5">{edu.institution}</p>
                         </div>
                       </div>
@@ -551,7 +551,7 @@ export default function About() {
                   <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Technical Stack</h4>
                   <div className="flex flex-wrap gap-1.5">
                     {member.skills.map((skill) => (
-                      <span key={skill} className="px-2.5 py-1 rounded-full text-[11px] font-medium bg-white/5 border border-white/10 text-gray-300 hover:border-[#8B0000]/40 hover:text-white transition-colors duration-200">
+                      <span key={skill} className="px-2.5 py-1 rounded-full text-[11px] font-medium dark:bg-white/5 dark:border-white/10 dark:text-gray-300 bg-black/5 border border-black/10 text-gray-700 hover:border-[#8B0000]/40 dark:hover:text-white hover:text-gray-900 transition-colors duration-200">
                         {skill}
                       </span>
                     ))}

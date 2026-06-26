@@ -114,7 +114,7 @@ const tooltipStyle = {
 
 export default function Stats() {
   return (
-    <section className="relative py-24 sm:py-32 bg-[#0D0D14] overflow-hidden">
+    <section className="relative py-24 sm:py-32 bg-background overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 grid-bg opacity-20" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#8B0000]/40 to-transparent" />
@@ -131,10 +131,10 @@ export default function Stats() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#8B0000]/30 bg-[#8B0000]/10 text-sm text-red-300/80 mb-6">
             Our Growth Journey
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
             Data-Driven <span className="gradient-text">Growth</span>
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="text-lg dark:text-gray-400 text-gray-600 max-w-2xl mx-auto">
             Since our founding in 2019, we have been growing rapidly, tracking every metric and improving every quarter.
           </p>
         </motion.div>
@@ -159,7 +159,7 @@ export default function Stats() {
               >
                 <stat.icon className="w-5 h-5" style={{ color: stat.color }} />
               </div>
-              <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
+              <div className="text-3xl font-bold text-foreground mb-1">{stat.value}</div>
               <div className="text-xs text-gray-500">{stat.label}</div>
             </motion.div>
           ))}
@@ -175,7 +175,7 @@ export default function Stats() {
             transition={{ duration: 0.7 }}
             className="lg:col-span-2 glass-card rounded-2xl p-6 border border-white/5"
           >
-            <h3 className="text-base font-bold text-white mb-1">Project Growth</h3>
+            <h3 className="text-base font-bold text-foreground mb-1">Project Growth</h3>
             <p className="text-xs text-gray-500 mb-6">Cumulative projects since January 2024</p>
             <ResponsiveContainer width="100%" height={260}>
               <AreaChart data={sparseGrowthData}>
@@ -233,7 +233,7 @@ export default function Stats() {
             transition={{ duration: 0.7, delay: 0.15 }}
             className="glass-card rounded-2xl p-6 border border-white/5"
           >
-            <h3 className="text-base font-bold text-white mb-1">Service Capability</h3>
+            <h3 className="text-base font-bold text-foreground mb-1">Service Capability</h3>
             <p className="text-xs text-gray-500 mb-4">Proficiency scores by service area</p>
             <ResponsiveContainer width="100%" height={260}>
               <RadarChart data={radarData}>
@@ -264,7 +264,7 @@ export default function Stats() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="glass-card rounded-2xl p-6 border border-white/5"
         >
-          <h3 className="text-base font-bold text-white mb-1">Quarterly Performance</h3>
+          <h3 className="text-base font-bold text-foreground mb-1">Quarterly Performance</h3>
           <p className="text-xs text-gray-500 mb-6">Revenue index and client count by quarter (2024 to 2026)</p>
           <ResponsiveContainer width="100%" height={240}>
             <BarChart data={quarterlyData} barGap={4}>

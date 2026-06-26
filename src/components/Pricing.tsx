@@ -97,7 +97,7 @@ export default function Pricing() {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <section id="pricing" className="relative py-24 sm:py-32 bg-[#13131E] overflow-hidden">
+    <section id="pricing" className="relative py-24 sm:py-32 bg-background-alt overflow-hidden">
       <div className="absolute inset-0 dot-grid opacity-20" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#8B0000]/40 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
@@ -115,11 +115,11 @@ export default function Pricing() {
             <BadgeCheck className="w-3.5 h-3.5" />
             Engagement Models
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
             Transparent{" "}
             <span className="gradient-text">Pricing</span>
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="text-lg dark:text-gray-400 text-gray-600 max-w-2xl mx-auto">
             Three engagement models built for how real businesses work. No hidden fees,
             no retainer lock-in traps — just honest pricing that scales with your needs.
           </p>
@@ -136,7 +136,7 @@ export default function Pricing() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className={`relative rounded-2xl border ${tier.border} bg-white/[0.02] p-8 flex flex-col ${tier.popular ? `shadow-xl ${tier.glow}` : ""}`}
+                className={`relative rounded-2xl border ${tier.border} dark:bg-white/[0.02] bg-white p-8 flex flex-col ${tier.popular ? `shadow-xl ${tier.glow}` : ""}`}
               >
                 {tier.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
@@ -150,13 +150,13 @@ export default function Pricing() {
                   <Icon className="w-5 h-5 text-white" />
                 </div>
 
-                <h3 className="text-xl font-bold text-white mb-1">{tier.name}</h3>
+                <h3 className="text-xl font-bold text-foreground mb-1">{tier.name}</h3>
                 <p className={`text-xs font-semibold uppercase tracking-widest ${tier.accent} mb-4`}>{tier.tagline}</p>
                 <p className="text-sm text-gray-400 leading-relaxed mb-6">{tier.description}</p>
 
                 <div className="mb-6">
                   <div className="flex items-baseline gap-2">
-                    <span className="text-3xl font-black text-white">{tier.range}</span>
+                    <span className="text-3xl font-black text-foreground">{tier.range}</span>
                   </div>
                   <span className="text-xs text-gray-500">{tier.period}</span>
                 </div>
@@ -192,11 +192,11 @@ export default function Pricing() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="rounded-2xl border border-white/8 bg-white/[0.02] p-8 flex flex-col sm:flex-row items-center justify-between gap-6 mb-20"
+          className="rounded-2xl border dark:border-white/8 border-black/8 dark:bg-white/[0.02] bg-white p-8 flex flex-col sm:flex-row items-center justify-between gap-6 mb-20"
         >
           <div>
-            <h4 className="text-lg font-bold text-white mb-1">Enterprise & Government</h4>
-            <p className="text-sm text-gray-400 max-w-xl">
+            <h4 className="text-lg font-bold text-foreground mb-1">Enterprise & Government</h4>
+            <p className="text-sm dark:text-gray-400 text-gray-600 max-w-xl">
               Large-scale implementations, multi-year agreements, and compliance-sensitive environments. We offer custom MSA/SLA structures, dedicated account management, and on-site delivery where required.
             </p>
           </div>
@@ -216,12 +216,12 @@ export default function Pricing() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="text-xl font-bold text-white text-center mb-8">Frequently Asked</h3>
+          <h3 className="text-xl font-bold text-foreground text-center mb-8">Frequently Asked</h3>
           <div className="grid sm:grid-cols-2 gap-6">
             {faqs.map((faq) => (
-              <div key={faq.q} className="rounded-xl border border-white/8 bg-white/[0.02] p-6">
-                <h4 className="text-sm font-bold text-white mb-2">{faq.q}</h4>
-                <p className="text-sm text-gray-400 leading-relaxed">{faq.a}</p>
+              <div key={faq.q} className="rounded-xl border dark:border-white/8 border-black/8 dark:bg-white/[0.02] bg-white p-6">
+                <h4 className="text-sm font-bold text-foreground mb-2">{faq.q}</h4>
+                <p className="text-sm dark:text-gray-400 text-gray-600 leading-relaxed">{faq.a}</p>
               </div>
             ))}
           </div>

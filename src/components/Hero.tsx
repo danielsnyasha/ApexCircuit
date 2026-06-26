@@ -51,7 +51,7 @@ export default function Hero() {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <section className="relative min-h-screen flex flex-col bg-[#0D0D14] overflow-hidden">
+    <section className="relative min-h-screen flex flex-col bg-background overflow-hidden">
       {/* Background grid */}
       <div className="absolute inset-0 grid-bg opacity-25 pointer-events-none" />
 
@@ -99,7 +99,7 @@ export default function Hero() {
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.38, duration: 0.7 }}
-                  className="text-[4rem] sm:text-[5.5rem] lg:text-[6.5rem] xl:text-[7.5rem] font-black leading-[0.9] tracking-tighter text-white"
+                  className="text-[4rem] sm:text-[5.5rem] lg:text-[6.5rem] xl:text-[7.5rem] font-black leading-[0.9] tracking-tighter text-foreground"
                 >
                   technology.
                 </motion.p>
@@ -110,7 +110,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.55, duration: 0.6 }}
-                className="text-gray-400 text-base sm:text-lg leading-relaxed max-w-lg mb-10"
+                className="dark:text-gray-400 text-gray-600 text-base sm:text-lg leading-relaxed max-w-lg mb-10"
               >
                 From enterprise-grade applications to spatial intelligence systems,
                 Apex Circuit delivers solutions that rival the world's best technology firms.
@@ -132,7 +132,7 @@ export default function Hero() {
                 </button>
                 <button
                   onClick={() => scrollTo("contact")}
-                  className="group flex items-center gap-2 px-7 py-3.5 rounded-xl border border-white/10 text-white font-bold text-[13px] uppercase tracking-widest hover:bg-white/5 hover:border-white/20 transition-all duration-300 hover:-translate-y-0.5"
+                  className="group flex items-center gap-2 px-7 py-3.5 rounded-xl border dark:border-white/10 dark:text-white dark:hover:bg-white/5 dark:hover:border-white/20 border-black/10 text-foreground hover:bg-black/5 hover:border-black/20 font-bold text-[13px] uppercase tracking-widest transition-all duration-300 hover:-translate-y-0.5"
                 >
                   Start a Project
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -148,7 +148,7 @@ export default function Hero() {
               >
                 {stats.map((s, i) => (
                   <div key={i} className="flex flex-col gap-0.5">
-                    <span className="text-2xl font-black text-white leading-none">{s.value}</span>
+                    <span className="text-2xl font-black text-foreground leading-none">{s.value}</span>
                     <span className="text-[10px] text-gray-500 uppercase tracking-[0.15em]">{s.label}</span>
                   </div>
                 ))}
@@ -260,7 +260,7 @@ export default function Hero() {
       </div>
 
       {/* ── Marquee strip ── */}
-      <div className="relative z-10 border-t border-white/[0.06] py-4 overflow-hidden bg-white/[0.01]">
+      <div className="relative z-10 border-t dark:border-white/[0.06] border-black/[0.06] py-4 overflow-hidden dark:bg-white/[0.01] bg-black/[0.01]">
         <div className="marquee-track gap-0">
           {[...marqueeItems, ...marqueeItems].map((item, i) => (
             <span

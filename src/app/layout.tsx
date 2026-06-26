@@ -3,6 +3,7 @@ import { Nunito, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const nunito = Nunito({
   variable: "--font-nunito",
@@ -318,6 +319,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${nunito.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
@@ -334,9 +336,11 @@ export default function RootLayout({
         <meta name="color-scheme" content="dark" />
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        <ClerkProvider>
-          <TooltipProvider>{children}</TooltipProvider>
-        </ClerkProvider>
+        <ThemeProvider>
+          <ClerkProvider>
+            <TooltipProvider>{children}</TooltipProvider>
+          </ClerkProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

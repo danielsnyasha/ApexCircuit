@@ -68,7 +68,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="relative py-24 sm:py-32 bg-[#0D0D14] overflow-hidden">
+    <section id="process" className="relative py-24 sm:py-32 bg-background overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-15 pointer-events-none" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#8B0000]/30 to-transparent" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full bg-[#2563EB]/4 blur-[140px] pointer-events-none" />
@@ -85,7 +85,7 @@ export default function Process() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#8B0000]/30 bg-[#8B0000]/10 text-sm text-red-300/80 mb-6">
             How We Work
           </div>
-          <h2 className="text-4xl sm:text-5xl font-black text-white mb-5 tracking-tight leading-tight">
+          <h2 className="text-4xl sm:text-5xl font-black text-foreground mb-5 tracking-tight leading-tight">
             From brief to production,{" "}
             <span className="gradient-text">step by step</span>
           </h2>
@@ -108,7 +108,7 @@ export default function Process() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="group relative glass-card rounded-2xl p-6 border border-white/5 hover:border-white/10 transition-all duration-400 hover:-translate-y-1"
+                className="group relative glass-card rounded-2xl p-6 border dark:border-white/5 dark:hover:border-white/10 border-black/5 hover:border-black/10 transition-all duration-400 hover:-translate-y-1"
               >
                 {/* Hover glow */}
                 <div
@@ -134,7 +134,7 @@ export default function Process() {
                   </div>
                 </div>
 
-                <h3 className="text-base font-bold text-white mb-2">{step.title}</h3>
+                <h3 className="text-base font-bold text-foreground mb-2">{step.title}</h3>
                 <p className="text-xs text-gray-500 leading-relaxed mb-5">{step.description}</p>
 
                 {/* Deliverables */}

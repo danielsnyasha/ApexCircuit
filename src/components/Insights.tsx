@@ -81,7 +81,7 @@ const articles = [
 
 export default function Insights() {
   return (
-    <section id="insights" className="relative py-24 sm:py-32 bg-[#0D0D14] overflow-hidden">
+    <section id="insights" className="relative py-24 sm:py-32 bg-background overflow-hidden">
       <div className="absolute inset-0 dot-grid opacity-20" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#8B0000]/40 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
@@ -100,11 +100,11 @@ export default function Insights() {
               <BookOpen className="w-3.5 h-3.5" />
               Insights
             </div>
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
               Engineering{" "}
               <span className="gradient-text">Knowledge</span>
             </h2>
-            <p className="text-lg text-gray-400 max-w-xl">
+            <p className="text-lg dark:text-gray-400 text-gray-600 max-w-xl">
               Deep technical writing from practitioners. No fluff — just the hard-won
               lessons from real enterprise projects.
             </p>
@@ -112,7 +112,7 @@ export default function Insights() {
           <div className="shrink-0">
             <button
               onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/10 text-gray-300 text-sm font-medium hover:text-white hover:border-white/20 hover:bg-white/5 transition-all duration-300 group"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border dark:border-white/10 border-black/10 dark:text-gray-300 dark:hover:text-white dark:hover:border-white/20 dark:hover:bg-white/5 text-gray-700 hover:text-gray-900 hover:border-black/20 hover:bg-black/5 text-sm font-medium transition-all duration-300 group"
             >
               Get articles by email
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
@@ -130,7 +130,7 @@ export default function Insights() {
         >
           <Link
             href={`/insights/${articles[0].slug}`}
-            className="block rounded-2xl border border-white/8 bg-white/[0.02] overflow-hidden group hover:border-white/15 transition-colors duration-300"
+            className="block rounded-2xl border dark:border-white/8 border-black/8 dark:bg-white/[0.02] bg-white/80 overflow-hidden group dark:hover:border-white/15 hover:border-black/15 transition-colors duration-300"
           >
             <div className="grid sm:grid-cols-5">
               <div className={`sm:col-span-1 h-2 sm:h-auto bg-gradient-to-br ${articles[0].gradient} opacity-70`} />
@@ -146,7 +146,7 @@ export default function Insights() {
                   </span>
                   <span className="text-xs text-gray-600">{articles[0].date}</span>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-gray-100 transition-colors">
+                <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3 group-hover:opacity-80 transition-opacity">
                   {articles[0].title}
                 </h3>
                 <p className="text-gray-400 text-sm leading-relaxed mb-5">{articles[0].excerpt}</p>
@@ -171,7 +171,7 @@ export default function Insights() {
             >
               <Link
                 href={`/insights/${article.slug}`}
-                className="group rounded-2xl border border-white/8 bg-white/[0.02] overflow-hidden hover:border-white/15 transition-colors duration-300 flex flex-col h-full block"
+                className="group rounded-2xl border dark:border-white/8 border-black/8 dark:bg-white/[0.02] bg-white/80 overflow-hidden dark:hover:border-white/15 hover:border-black/15 transition-colors duration-300 flex flex-col h-full block"
               >
                 <div className={`h-1.5 bg-gradient-to-r ${article.gradient}`} />
 
@@ -187,7 +187,7 @@ export default function Insights() {
                     </span>
                   </div>
 
-                  <h3 className="text-base font-bold text-white mb-2 leading-snug group-hover:text-gray-100 transition-colors flex-1">
+                  <h3 className="text-base font-bold text-foreground mb-2 leading-snug group-hover:opacity-80 transition-opacity flex-1">
                     {article.title}
                   </h3>
                   <p className="text-sm text-gray-500 leading-relaxed mb-5 line-clamp-3">{article.excerpt}</p>

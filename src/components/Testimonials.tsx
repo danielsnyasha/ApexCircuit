@@ -113,7 +113,7 @@ export default function Testimonials() {
   const next = () => setActive((a) => (a + 1) % testimonials.length);
 
   return (
-    <section className="relative py-24 sm:py-32 bg-[#0B0B12] overflow-hidden">
+    <section className="relative py-24 sm:py-32 bg-background-alt overflow-hidden">
       <div className="absolute inset-0 dot-grid opacity-20" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
 
@@ -130,11 +130,11 @@ export default function Testimonials() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#2563EB]/30 bg-[#2563EB]/10 text-sm text-blue-300/80 mb-6">
             Industries We Serve
           </div>
-          <h2 className="text-4xl sm:text-5xl font-black text-white mb-5 tracking-tight">
+          <h2 className="text-4xl sm:text-5xl font-black text-foreground mb-5 tracking-tight">
             Built for every{" "}
             <span className="gradient-text-blue">sector</span>
           </h2>
-          <p className="text-gray-400 text-base max-w-xl mx-auto">
+          <p className="dark:text-gray-400 text-gray-600 text-base max-w-xl mx-auto">
             Domain-aware engineering across twelve industries. We speak your language before we write your code.
           </p>
         </motion.div>
@@ -154,7 +154,7 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
-              className="group flex flex-col items-center gap-2 py-4 px-3 rounded-2xl border border-white/5 bg-white/[0.02] hover:border-white/15 hover:bg-white/[0.04] transition-all duration-300 cursor-default"
+              className="group flex flex-col items-center gap-2 py-4 px-3 rounded-2xl border dark:border-white/5 border-black/5 dark:bg-white/[0.02] bg-white/50 dark:hover:border-white/15 dark:hover:bg-white/[0.04] hover:border-black/10 hover:bg-white/80 transition-all duration-300 cursor-default"
             >
               <div
                 className="w-9 h-9 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
@@ -162,7 +162,7 @@ export default function Testimonials() {
               >
                 <sector.icon className="w-4 h-4" style={{ color: sector.color }} />
               </div>
-              <span className="text-[11px] font-medium text-gray-400 text-center leading-tight group-hover:text-white transition-colors">
+              <span className="text-[11px] font-medium dark:text-gray-400 text-gray-600 text-center leading-tight dark:group-hover:text-white group-hover:text-gray-900 transition-colors">
                 {sector.name}
               </span>
             </motion.div>
@@ -174,7 +174,7 @@ export default function Testimonials() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#8B0000]/30 bg-[#8B0000]/10 text-sm text-red-300/80 mb-4">
             Client Testimonials
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-black text-foreground tracking-tight">
             What clients say about <span className="gradient-text">our work</span>
           </h2>
         </div>
@@ -238,7 +238,7 @@ export default function Testimonials() {
                 >
                   <Quote className="w-10 h-10 text-white/10 mb-6" />
 
-                  <p className="text-white text-base sm:text-lg leading-relaxed font-medium mb-8">
+                  <p className="text-foreground text-base sm:text-lg leading-relaxed font-medium mb-8">
                     &ldquo;{testimonials[active].quote}&rdquo;
                   </p>
 
@@ -258,7 +258,7 @@ export default function Testimonials() {
                         />
                       </div>
                       <div>
-                        <p className="text-white font-bold text-sm">{testimonials[active].name}</p>
+                        <p className="text-foreground font-bold text-sm">{testimonials[active].name}</p>
                         <p className="text-xs text-gray-400">{testimonials[active].role}</p>
                         <p className="text-xs text-gray-600 mb-1">{testimonials[active].company}</p>
                         <StarRow />

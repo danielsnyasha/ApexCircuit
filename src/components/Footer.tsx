@@ -66,7 +66,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-[#0D0D14] border-t border-white/5 overflow-hidden">
+    <footer className="relative bg-background border-t dark:border-white/5 border-black/5 overflow-hidden">
       {/* Top gradient line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#8B0000]/40 to-transparent" />
 
@@ -85,7 +85,7 @@ export default function Footer() {
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#8B0000] to-[#DC2626] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <Zap className="w-4 h-4 text-white" />
               </div>
-              <span className="text-xl font-bold text-white">
+              <span className="text-xl font-bold text-foreground">
                 Apex<span className="gradient-text"> Circuit</span>
               </span>
             </button>
@@ -117,7 +117,7 @@ export default function Footer() {
           {/* Links */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category} className="col-span-1">
-              <h4 className="text-xs font-semibold text-white uppercase tracking-wider mb-4">
+              <h4 className="text-xs font-semibold text-foreground uppercase tracking-wider mb-4">
                 {category}
               </h4>
               <ul className="space-y-2.5">
@@ -144,10 +144,10 @@ export default function Footer() {
         </div>
 
         {/* Newsletter */}
-        <div className="border-t border-white/5 py-10">
+        <div className="border-t dark:border-white/5 border-black/5 py-10">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
             <div>
-              <h4 className="text-sm font-bold text-white mb-1">Monthly tech insights — no spam.</h4>
+              <h4 className="text-sm font-bold text-foreground mb-1">Monthly tech insights — no spam.</h4>
               <p className="text-xs text-gray-500">Deep dives on ERP, GIS, AI automation, and enterprise engineering. One email per month.</p>
             </div>
             {subscribed ? (
@@ -163,7 +163,7 @@ export default function Footer() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="your@email.com"
                   required
-                  className="px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#8B0000]/50 focus:bg-white/8 transition-all duration-200 w-56"
+                  className="px-4 py-2.5 rounded-xl dark:bg-white/5 dark:border-white/10 dark:text-white dark:placeholder-gray-600 bg-white border-black/10 text-foreground placeholder-gray-400 focus:outline-none focus:border-[#8B0000]/50 transition-all duration-200 w-56"
                 />
                 <button
                   type="submit"
@@ -183,7 +183,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/5 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="border-t dark:border-white/5 border-black/5 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex flex-col sm:flex-row items-center gap-3 text-xs text-gray-600">
             <span>© 2019–2026 Apex Circuit. All rights reserved.</span>
             <span className="hidden sm:block">·</span>
